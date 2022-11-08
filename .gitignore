@@ -1,0 +1,6 @@
+
+.DS_Store
+composer/.composer/vendor
+composer/.composer/.htaccess
+composer/.composer/composer.lock
+karabiner/.config/karabiner/automatic_backups/*

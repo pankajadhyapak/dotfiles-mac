@@ -1,0 +1,93 @@
+function zsh_add_file() {
+    [ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
+}
+
+function zsh_add_plugin() {
+    PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+    if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then
+        # For plugins
+        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
+        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+    else
+        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+    fi
+}
+
+function dropLine() {
+    file=${1}
+    pattern=${2}
+    lineNumber=$(grep -n -m 1 "$pattern" ${file} | cut -d : -f 1)
+    if [[ ! -z "$lineNumber" ]]; then
+        sed -i "${lineNumber}d" ${file}
+    fi
+}
+
+function fd() {
+  preview="git diff $@ --color=always -- {-1} "
+  git diff $@ --name-only | fzf -m --ansi --layout=reverse --height 50% --tac --preview $preview | xclip -sel clip
+}
+
+
+function gb() {
+  git for-each-ref --sort=committerdate --format='%(refname:short)' | fzf -m --ansi --layout=reverse --height 50% --tac | xargs git switch
+}
+
+
+# Create a new directory and enter it
+function mkd() {
+   mkdir -p "$@" && cd "$@"
+}
+
+
+function weather() {
+   city="$1"
+
+   if [ -z "$city" ]; then
+      city="berlin"
+   fi
+
+   eval "curl http://wttr.in/${city}"
+}
+
+
+#  Commit everything
+function gc() {
+  commitMessage="$1"
+
+  if [ "$commitMessage" = "" ]; then
+     commitMessage="wip"
+  fi
+
+  git add .
+  eval "git commit -a -m '${commitMessage}'"
+}
+
+function toggle_layout() {
+  CURRENT_LAYOUT=$(yabai -m query --spaces --space | jq '.type')
+  if [ $CURRENT_LAYOUT = '"stack"' ]; then
+    yabai -m space --layout bsp
+  else
+    yabai -m space --layout stack
+  fi
+}
+
+
+function rwm(){
+  brew services restart yabai
+  brew services restart skhd
+  osascript -e 'tell application id "tracesOf.Uebersicht" to refresh widget id "simple-bar-index-jsx"'
+}
+
+
+function ns(){
+  fileName="$HOME/Dropbox/arch_linux/org/$(date +'%d_%m_%Y_%A').org"
+  nvim $fileName
+}
+
+
+function ms(){
+  yabai -m window --toggle float --grid 4:4:1:1:2:2
+  yabai -m window --toggle sticky
+  yabai -m window --toggle topmost
+  ns
+}
