@@ -1,5 +1,6 @@
 tap "blendle/blendle"
 tap "cmacrae/formulae"
+tap "epk/epk"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -22,6 +23,8 @@ brew "php"
 brew "composer"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Distributed revision control system
@@ -34,8 +37,12 @@ brew "gnu-sed"
 brew "go"
 # Fast linters runner for Go
 brew "golangci-lint"
+# Language server for the Go language
+brew "gopls"
 # GNU grep, egrep and fgrep
 brew "grep"
+# OpenType text shaping engine
+brew "harfbuzz"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
@@ -48,10 +55,14 @@ brew "jq"
 brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Terminal file manager
+brew "lf"
 # C and C++ client library to the memcached server
 brew "libmemcached"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Keep your Mac's application settings in sync
+brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
 # High performance, distributed memory object caching system
@@ -63,7 +74,7 @@ brew "mysql-client"
 # Text-based UI library
 brew "ncurses"
 # Parser generator tool and incremental parsing library
-brew "tree-sitter", link: false
+brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Platform built on V8 to build network applications
@@ -78,6 +89,8 @@ brew "ripgrep"
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
 # Tool to build, change, and version infrastructure
 brew "terraform"
 # Terminal multiplexer
@@ -86,6 +99,8 @@ brew "tmux"
 brew "trash"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Manage the desktop wallpaper
+brew "wallpaper"
 # Internet file retriever
 brew "wget"
 # Library to create, extract, and modify Windows Imaging files
@@ -96,12 +111,16 @@ brew "yarn"
 brew "youtube-dl"
 # In terminal graphical metrics for your *nix system
 brew "zenith"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
+# GPU-accelerated terminal emulator
+cask "alacritty"
 # Tools for building Android applications
 cask "android-studio"
 # Application uninstaller
@@ -122,10 +141,13 @@ cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
+cask "font-sf-mono-nerd-font"
 # Desktop client for GitHub repositories
 cask "github"
 # Go (golang) IDE
 cask "goland"
+# Tool to optimize images to a smaller size
+cask "imageoptim"
 # Keyboard customizer
 cask "karabiner-elements"
 # GPU-based terminal emulator
@@ -134,6 +156,8 @@ cask "kitty"
 cask "notion"
 # PHP IDE by JetBrains
 cask "phpstorm"
+# Colour picker for colours onscreen
+cask "pika"
 # Collaboration platform for API development
 cask "postman"
 # QuickLook plug-in that renders source code with syntax highlighting
@@ -170,4 +194,4 @@ mas "ColorSlurp", id: 1287239339
 mas "Edison Mail", id: 1489591003
 mas "Slack", id: 803453959
 mas "TickTick", id: 966085870
-
+mas "Xcode", id: 497799835

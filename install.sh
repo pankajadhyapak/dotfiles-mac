@@ -25,6 +25,7 @@ brew bundle
 
 #gitconfig
 rm -rf "$HOME/.gitignore"
+ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTFILES/git/gitignore" "$HOME/.gitignore"
 git config --global core.excludesFile  "$HOME/.gitignore"
 
@@ -35,6 +36,9 @@ ln -sf "$DOTFILES/vscode.json" "$HOME/Library/Application Support/Code/User/sett
 #kitty
 rm -rf "$XDG_CONFIG_HOME/kitty"
 ln -s "$DOTFILES/kitty" "$XDG_CONFIG_HOME"
+#alacritty
+rm -rf "$XDG_CONFIG_HOME/alacritty"
+ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
 
 
 # Zsh

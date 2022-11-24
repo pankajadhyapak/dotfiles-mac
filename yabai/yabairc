@@ -89,7 +89,7 @@ yabai -m rule --add app="^Spark$"  space="9"
 yabai -m rule --add app="^Edison Mail$"  space="9"
 
 # ignore apps
-ignoreApps='^(TickTick|Raycast|ssimulator|Simulator|AppCleaner|System Preferences|Karabiner-Elements|Karabiner-EventViewer|Finder|Alfred Preferences|Disk Utility|System Information|Activity Monitor|Path Finder|Docker Desktop|App Store)$'
+ignoreApps='^(Reminders|TickTick|Raycast|ssimulator|Simulator|AppCleaner|System Preferences|Karabiner-Elements|Karabiner-EventViewer|Finder|Alfred Preferences|Disk Utility|System Information|Activity Monitor|Path Finder|Docker Desktop|App Store)$'
 yabai -m rule --add app="${ignoreApps}" manage=off
 yabai -m rule --add app="^(LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
@@ -98,15 +98,9 @@ yabai -m rule --add label="About This Mac" app="System Information" title="About
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 
 # Some Goland settings, in case you are using it. float Goland Preference panes
-yabai -m rule --add app="^PhpStorm$" manage=off
-yabai -m rule --add app="^PhpStorm$" title=".*\[(.*)\].*" manage=on
-yabai -m rule --add app="^simulator|Simulator$" manage=on
-
-yabai -m rule --add app="^GoLand$" manage=off
-yabai -m rule --add app="^GoLand$" title=".*\[(.*)\].*" manage=on
-
-yabai -m rule --add app="^Android Studio$" manage=off
-yabai -m rule --add app="^Android Studio$" title=".*\[(.*)\].*" manage=on
+JetBrainsApp='^(IntelliJ IDEA|WebStorm|GoLand|PhpStorm|Android Studio)$'
+yabai -m rule --add app="${JetBrainsApp}" manage=off
+yabai -m rule --add app="${JetBrainsApp}" title="( – )"  manage=on
 
 yabai -m config layout                       bsp
 

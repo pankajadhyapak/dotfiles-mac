@@ -1,0 +1,187 @@
+window:
+  padding:
+    x: 6
+    y: 6
+  dynamic_padding: false
+  decorations: buttonless
+  # startup_mode: Fullscreen
+
+  # Window title
+  title: Alacritty
+  dynamic_title: true
+
+#scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  #history: 10000
+
+  # Scrolling distance multiplier.
+  #multiplier: 3
+
+key_bindings:
+  # Rename the current tmux window
+  - { key: Comma, mods: Command, chars: "\x02\x2c" }
+  # Select a new tmux session for the attached client interactively
+  - { key: K, mods: Command, chars: "\x02\x73" }
+  # Select window 1-9
+  - { key: Key1, mods: Option, chars: "\x02\x31" }
+  - { key: Key2, mods: Option, chars: "\x02\x32" }
+  - { key: Key3, mods: Option, chars: "\x02\x33" }
+  - { key: Key4, mods: Option, chars: "\x02\x34" }
+  - { key: Key5, mods: Option, chars: "\x02\x35" }
+  - { key: Key6, mods: Option, chars: "\x02\x36" }
+  - { key: Key7, mods: Option, chars: "\x02\x37" }
+  - { key: Key8, mods: Option, chars: "\x02\x38" }
+  - { key: Key9, mods: Option, chars: "\x02\x39" }
+  # Switch to last tmux session
+  - { key: L, mods: Command, chars: "\x02\x4c" }
+  - { key: LBracket, mods: Command, chars: "\x02\x5b" }
+  # Change to the previous tmux window
+  - { key: LBracket, mods: Command|Shift, chars: "\x02\x70" }
+    # Split the current pane into two, top and bottom.
+  - { key: N, mods: Command|Shift, chars: "\x02\x22" }
+    # Split the current pane into two, left and right
+  - { key: N, mods: Command, chars: "\x02\x25" }
+#   # Detach the current tmux client
+  - { key: X, mods: Command|Shift, chars: "\x02\x64" }
+  # Change to the next tmux window
+  - { key: RBracket, mods: Command|Shift, chars: "\x02\x6e" }
+  # Type <escape>:w<enter> to save neovim
+  - { key: S, mods: Command, chars: "\x1b\x3a\x77\x0a" }
+  # Create a new tmux window
+  - { key: T, mods: Command, chars: "\x02\x63" }
+  # Break the current tmux pane out of the tmux window
+  - { key: T, mods: Command|Shift, chars: "\x02\x21" }
+  # Kill the current tmux pane (and window if last pane)
+  - { key: X, mods: Command, chars: "\x02\x78" }
+  # Toggle the zoom state of the current tmux pane
+  - { key: Z, mods: Command, chars: "\x02\x7a" }
+  - { key: F, mods: Command, chars: "lf\n" }
+  - { key: D, mods: Command, chars: "l\n" }
+  - { key: R, mods: Command, chars: "clear\n" }
+  - { key: R, mods: Command|Shift, chars: "\x1b\x5b\x41\x0a" }
+
+
+# key_bindings:
+#   - { key: Comma, mods: Command, chars: "\x02," }
+#   - { key: D, mods: Command, chars: "\x02K" }
+#   - { key: F, mods: Command, chars: "lfcd\n" }
+#   - { key: P, mods: Command, chars: ":Telescope git_files\n" }
+#   - { key: P, mods: Command|Shift, chars: ":Telescope commands\n" }
+#   - { key: G, mods: Command, chars: "\x02g" }
+#   - { key: K, mods: Command, chars: "\x02s" }
+#   - { key: Key1, mods: Command, chars: "\x021" }
+#   - { key: Key2, mods: Command, chars: "\x022" }
+#   - { key: Key3, mods: Command, chars: "\x023" }
+#   - { key: Key4, mods: Command, chars: "\x024" }
+#   - { key: Key5, mods: Command, chars: "\x025" }
+#   - { key: Key6, mods: Command, chars: "\x026" }
+#   - { key: Key7, mods: Command, chars: "\x027" }
+#   - { key: Key8, mods: Command, chars: "\x028" }
+#   - { key: Key9, mods: Command, chars: "\x029" }
+#   - { key: L, mods: Command, chars: "\x02L" }
+#   - { key: LBracket, mods: Command, chars: "\x02[" }
+#   - { key: LBracket, mods: Command|Shift, chars: "\x02p" }
+#   - { key: O, mods: Command, chars: "\x02u" }
+#   - { key: E, mods: Command|Shift, chars: "\x02%" }
+#   - { key: E, mods: Command, chars: "\x02\"" }
+#   - { key: Q, mods: Command, chars: ":q\n" }
+#   - { key: RBracket, mods: Command|Shift, chars: "\x02n" }
+#   - { key: R, mods: Command, chars: "\x1b\x5b\x41\x0a" }
+#   - { key: S, mods: Command, chars: "\x1b\x3a\x77\x0a" }
+#   - { key: S, mods: Command|Shift, chars: ":wa\n" }
+#   - { key: Semicolon, mods: Command, chars: "\x02:" }
+#   - { key: T, mods: Command, chars: "\x02c" }
+#   - { key: J, mods: Command, chars: "\x02\x54" }
+#   - { key: X, mods: Command, chars: "\x02x" }
+#   - { key: Z, mods: Command, chars: "\x02z" }
+
+# Font configuration
+font:
+  normal:
+    family: "JetBrainsMono Nerd Font"
+    style: Regular
+  size: 14.0
+  offset:
+      y: 16    # For line spacing.
+colors:
+    primary:
+        background: "#1E1E2E" # base
+        foreground: "#CDD6F4" # text
+        # Bright and dim foreground colors
+        dim_foreground: "#CDD6F4" # text
+        bright_foreground: "#CDD6F4" # text
+
+    # Cursor colors
+    cursor:
+        text: "#1E1E2E" # base
+        cursor: "#F5E0DC" # rosewater
+    vi_mode_cursor:
+        text: "#1E1E2E" # base
+        cursor: "#B4BEFE" # lavender
+
+    # Search colors
+    search:
+        matches:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
+        focused_match:
+            foreground: "#1E1E2E" # base
+            background: "#A6E3A1" # green
+        footer_bar:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
+
+    # Keyboard regex hints
+    hints:
+        start:
+            foreground: "#1E1E2E" # base
+            background: "#F9E2AF" # yellow
+        end:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
+
+    # Selection colors
+    selection:
+        text: "#1E1E2E" # base
+        background: "#F5E0DC" # rosewater
+
+    # Normal colors
+    normal:
+        black: "#45475A" # surface1
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#BAC2DE" # subtext1
+
+    # Bright colors
+    bright:
+        black: "#585B70" # surface2
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#A6ADC8" # subtext0
+
+    # Dim colors
+    dim:
+        black: "#45475A" # surface1
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#BAC2DE" # subtext1
+
+    indexed_colors:
+        - { index: 16, color: "#FAB387" }
+        - { index: 17, color: "#F5E0DC" }
+
+
+
