@@ -9,6 +9,7 @@ alias code="cd ~/code"
 alias w="cd ~/work"
 alias ls="lsd -la"
 alias cat='bat'
+alias tinker="psysh"
 alias .d='cd ~/.dotfiles'
 alias .c='cd ~/.config'
 alias .l='cd ~/.local'

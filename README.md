@@ -15,7 +15,11 @@
 
 4. ```./install.sh```
 
+# Dev deps
+```./dev.sh```
 
+# Commands
+```brew bundle dump --describe -f```
 ## Preview
 
 
