@@ -62,39 +62,6 @@ key_bindings:
   - { key: R, mods: Command|Shift, chars: "\x1b\x5b\x41\x0a" }
 
 
-# key_bindings:
-#   - { key: Comma, mods: Command, chars: "\x02," }
-#   - { key: D, mods: Command, chars: "\x02K" }
-#   - { key: F, mods: Command, chars: "lfcd\n" }
-#   - { key: P, mods: Command, chars: ":Telescope git_files\n" }
-#   - { key: P, mods: Command|Shift, chars: ":Telescope commands\n" }
-#   - { key: G, mods: Command, chars: "\x02g" }
-#   - { key: K, mods: Command, chars: "\x02s" }
-#   - { key: Key1, mods: Command, chars: "\x021" }
-#   - { key: Key2, mods: Command, chars: "\x022" }
-#   - { key: Key3, mods: Command, chars: "\x023" }
-#   - { key: Key4, mods: Command, chars: "\x024" }
-#   - { key: Key5, mods: Command, chars: "\x025" }
-#   - { key: Key6, mods: Command, chars: "\x026" }
-#   - { key: Key7, mods: Command, chars: "\x027" }
-#   - { key: Key8, mods: Command, chars: "\x028" }
-#   - { key: Key9, mods: Command, chars: "\x029" }
-#   - { key: L, mods: Command, chars: "\x02L" }
-#   - { key: LBracket, mods: Command, chars: "\x02[" }
-#   - { key: LBracket, mods: Command|Shift, chars: "\x02p" }
-#   - { key: O, mods: Command, chars: "\x02u" }
-#   - { key: E, mods: Command|Shift, chars: "\x02%" }
-#   - { key: E, mods: Command, chars: "\x02\"" }
-#   - { key: Q, mods: Command, chars: ":q\n" }
-#   - { key: RBracket, mods: Command|Shift, chars: "\x02n" }
-#   - { key: R, mods: Command, chars: "\x1b\x5b\x41\x0a" }
-#   - { key: S, mods: Command, chars: "\x1b\x3a\x77\x0a" }
-#   - { key: S, mods: Command|Shift, chars: ":wa\n" }
-#   - { key: Semicolon, mods: Command, chars: "\x02:" }
-#   - { key: T, mods: Command, chars: "\x02c" }
-#   - { key: J, mods: Command, chars: "\x02\x54" }
-#   - { key: X, mods: Command, chars: "\x02x" }
-#   - { key: Z, mods: Command, chars: "\x02z" }
 
 # Font configuration
 font:
@@ -104,84 +71,45 @@ font:
   size: 14.0
   offset:
       y: 16    # For line spacing.
+
 colors:
-    primary:
-        background: "#1E1E2E" # base
-        foreground: "#CDD6F4" # text
-        # Bright and dim foreground colors
-        dim_foreground: "#CDD6F4" # text
-        bright_foreground: "#CDD6F4" # text
+  # Default colors
+  primary:
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
+    #dim_foreground: '0x9a9a9a'
+    bright_foreground: '0xe6efff'
 
-    # Cursor colors
-    cursor:
-        text: "#1E1E2E" # base
-        cursor: "#F5E0DC" # rosewater
-    vi_mode_cursor:
-        text: "#1E1E2E" # base
-        cursor: "#B4BEFE" # lavender
+  # Normal colors
+  normal:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
 
-    # Search colors
-    search:
-        matches:
-            foreground: "#1E1E2E" # base
-            background: "#A6ADC8" # subtext0
-        focused_match:
-            foreground: "#1E1E2E" # base
-            background: "#A6E3A1" # green
-        footer_bar:
-            foreground: "#1E1E2E" # base
-            background: "#A6ADC8" # subtext0
+  # Bright colors
+  bright:
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xe6efff'
 
-    # Keyboard regex hints
-    hints:
-        start:
-            foreground: "#1E1E2E" # base
-            background: "#F9E2AF" # yellow
-        end:
-            foreground: "#1E1E2E" # base
-            background: "#A6ADC8" # subtext0
-
-    # Selection colors
-    selection:
-        text: "#1E1E2E" # base
-        background: "#F5E0DC" # rosewater
-
-    # Normal colors
-    normal:
-        black: "#45475A" # surface1
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#BAC2DE" # subtext1
-
-    # Bright colors
-    bright:
-        black: "#585B70" # surface2
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#A6ADC8" # subtext0
-
-    # Dim colors
-    dim:
-        black: "#45475A" # surface1
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#BAC2DE" # subtext1
-
-    indexed_colors:
-        - { index: 16, color: "#FAB387" }
-        - { index: 17, color: "#F5E0DC" }
-
-
+  # Dim colors
+  dim:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
 

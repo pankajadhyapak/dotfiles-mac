@@ -36,6 +36,8 @@ yabai -m config active_window_border_color   0xffb4befe
 yabai -m config normal_window_border_color   0xff2a2f38
 yabai -m config insert_feedback_color        0xff9dd274
 yabai -m config window_animation_duration    1
+yabai -m config window_border_blur           off
+yabai -m config window_border                off
 
 # general space settings
 yabai -m config top_padding                  0
@@ -89,13 +91,12 @@ yabai -m rule --add app="^Spark$"  space="9"
 yabai -m rule --add app="^Edison Mail$"  space="9"
 
 # ignore apps
-ignoreApps='^(Reminders|TickTick|Raycast|ssimulator|Simulator|AppCleaner|System Preferences|Karabiner-Elements|Karabiner-EventViewer|Finder|Alfred Preferences|Disk Utility|System Information|Activity Monitor|Path Finder|Docker Desktop|App Store)$'
+ignoreApps="^(Podcasts|Books|System Settings|Keychain Access|Reminders|TickTick|Raycast|ssimulator|Simulator|AppCleaner|System Preferences|Karabiner-Elements|Karabiner-EventViewer|Finder|Alfred Preferences|Disk Utility|System Information|Activity Monitor|Path Finder|Docker Desktop|App Store)$"
 yabai -m rule --add app="${ignoreApps}" manage=off
 yabai -m rule --add app="^(LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 
 # Some Goland settings, in case you are using it. float Goland Preference panes
 JetBrainsApp='^(IntelliJ IDEA|WebStorm|GoLand|PhpStorm|Android Studio)$'

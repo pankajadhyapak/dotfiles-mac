@@ -6,6 +6,7 @@ source "zsh/.zshenv"
 
 # Create a basic directory
 mkdir -p $HOME/code
+mkdir -p $HOME/work
 mkdir -p $HOME/screenshots
 mkdir -p $HOME/.config
 
@@ -36,6 +37,7 @@ ln -sf "$DOTFILES/vscode.json" "$HOME/Library/Application Support/Code/User/sett
 #kitty
 rm -rf "$XDG_CONFIG_HOME/kitty"
 ln -s "$DOTFILES/kitty" "$XDG_CONFIG_HOME"
+
 #alacritty
 rm -rf "$XDG_CONFIG_HOME/alacritty"
 ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
@@ -64,6 +66,10 @@ ln -s "$DOTFILES/yabai" "$XDG_CONFIG_HOME"
 #karabiner
 rm -rf "$XDG_CONFIG_HOME/karabiner"
 ln -s "$DOTFILES/karabiner" "$XDG_CONFIG_HOME"
+
+#tmux
+rm -rf "$XDG_CONFIG_HOME/tmux"
+ln -s "$DOTFILES/tmux" "$XDG_CONFIG_HOME"
 
 #sketchybar
 rm -rf "$XDG_CONFIG_HOME/sketchybar"

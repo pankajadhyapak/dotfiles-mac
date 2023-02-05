@@ -23,15 +23,13 @@ function dropLine() {
 }
 
 function fd() {
-  preview="git diff $@ --color=always -- {-1} "
-  git diff $@ --name-only | fzf -m --ansi --layout=reverse --height 50% --tac --preview $preview | xclip -sel clip
+  preview="git diff $@ --color=always {1} | delta "
+  git diff $@ --name-only | fzf --header "Changed files" --preview $preview | pbcopy
 }
-
 
 function gb() {
-  git for-each-ref --sort=committerdate --format='%(refname:short)' | fzf -m --ansi --layout=reverse --height 50% --tac | xargs git switch
+  git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout
 }
-
 
 # Create a new directory and enter it
 function mkd() {
@@ -71,13 +69,11 @@ function toggle_layout() {
   fi
 }
 
-
 function rwm(){
   brew services restart yabai
   brew services restart skhd
-  osascript -e 'tell application id "tracesOf.Uebersicht" to refresh widget id "simple-bar-index-jsx"'
+  brew services restart sketchybar
 }
-
 
 function ns(){
   fileName="$HOME/Dropbox/arch_linux/org/$(date +'%d_%m_%Y_%A').org"

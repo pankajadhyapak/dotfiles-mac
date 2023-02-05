@@ -1,5 +1,6 @@
 tap "blendle/blendle"
 tap "cmacrae/formulae"
+tap "dart-lang/dart"
 tap "epk/epk"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
@@ -9,12 +10,17 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "leoafarias/fvm"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Linux/OSX/FreeBSD resource monitor
 brew "bpytop"
+# Switch Apache / Valet / CLI configs between PHP versions
+brew "brew-php-switcher"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # General-purpose scripting language
@@ -25,10 +31,16 @@ brew "composer"
 brew "coreutils"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Audit git repos for secrets
 brew "gitleaks"
 # GNU implementation of the famous stream editor
@@ -41,8 +53,6 @@ brew "golangci-lint"
 brew "gopls"
 # GNU grep, egrep and fgrep
 brew "grep"
-# OpenType text shaping engine
-brew "harfbuzz"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
@@ -83,6 +93,8 @@ brew "node"
 brew "pandoc"
 # General-purpose scripting language
 brew "php@7.4"
+# General-purpose scripting language
+brew "php@8.1"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Cross-shell prompt for astronauts
@@ -91,8 +103,8 @@ brew "starship"
 brew "stow"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
-# Tool to build, change, and version infrastructure
-brew "terraform"
+# Terraform version manager inspired by rbenv
+brew "tfenv"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
@@ -118,7 +130,7 @@ brew "felixkratz/formulae/sketchybar"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Tools for building Android applications
@@ -127,8 +139,6 @@ cask "android-studio"
 cask "appcleaner"
 # Utility that prevents the system from going to sleep
 cask "caffeine"
-# App to build and share containerized applications and microservices
-cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # UI toolkit for building applications for mobile, web and desktop
@@ -146,8 +156,12 @@ cask "font-sf-mono-nerd-font"
 cask "github"
 # Go (golang) IDE
 cask "goland"
+# Web browser
+cask "google-chrome"
 # Tool to optimize images to a smaller size
 cask "imageoptim"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 # Keyboard customizer
 cask "karabiner-elements"
 # GPU-based terminal emulator
@@ -171,6 +185,8 @@ cask "qlstephen"
 cask "quicklook-csv"
 # QuickLook plugin for JSON files
 cask "quicklook-json"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 # System monitor for the menu bar
@@ -185,6 +201,8 @@ cask "telegram-desktop"
 cask "the-unarchiver"
 # Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
 # Desktop client for WhatsApp
 cask "whatsapp"
 # Video communication and virtual meeting platform
@@ -192,6 +210,12 @@ cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "ColorSlurp", id: 1287239339
 mas "Edison Mail", id: 1489591003
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Slack", id: 803453959
+mas "SmartDNSProxy", id: 1471096079
+mas "Spark", id: 1176895641
 mas "TickTick", id: 966085870
-mas "Xcode", id: 497799835

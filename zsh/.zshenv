@@ -13,6 +13,9 @@ export PATH="$HOME/.local/bin:$HOME/.local/bin/scripts:$HOME/.local/bin/scripts/
 export PATH="$XDG_CONFIG_HOME/composer/vendor/bin:$PATH"
 export PATH="$HOME/go/bin/:$PATH"
 export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$HOME/.pub-cache/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
@@ -23,3 +26,6 @@ export HISTFILE="$ZDOTDIR/.zhistory"
 export SAVEHIST=100000
 
 export DOTFILES="$HOME/.dotfiles"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

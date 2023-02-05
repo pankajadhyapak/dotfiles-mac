@@ -43,6 +43,9 @@
     "[jsx]": {
       "editor.formatOnSave": true
     },
+    "[html]": {
+      "editor.formatOnSave": true
+    },
 
     "go.toolsManagement.autoUpdate": true,
     "vetur.format.defaultFormatterOptions": {

@@ -6,6 +6,7 @@ alias ez="nvim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
 alias art="php artisan"
 alias code="cd ~/code"
+alias w="cd ~/work"
 alias ls="lsd -la"
 alias cat='bat'
 alias .d='cd ~/.dotfiles'

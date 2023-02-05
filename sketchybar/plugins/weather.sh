@@ -7,4 +7,4 @@ fi
 if [[ "$data" == *"html"* ]]; then
   exit
 fi
-sketchybar --set weather icon="􀇔" label="$data" icon.color=0xffebcb8b label.color=0xffebcb8b
+sketchybar --set weather icon="􀇔" label="$data" icon.color=0xffd19a66 label.color=0xffd19a66
