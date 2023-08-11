@@ -59,8 +59,5 @@ bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
-#homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 #zoxide
 eval "$(zoxide init zsh)"

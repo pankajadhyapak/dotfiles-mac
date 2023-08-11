@@ -10,10 +10,10 @@ window:
   title: Alacritty
   dynamic_title: true
 
-#scrolling:
+scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  #history: 10000
+  history: 10000
 
   # Scrolling distance multiplier.
   #multiplier: 3
@@ -58,7 +58,8 @@ key_bindings:
   - { key: Z, mods: Command, chars: "\x02\x7a" }
   - { key: F, mods: Command, chars: "lf\n" }
   - { key: D, mods: Command, chars: "l\n" }
-  - { key: R, mods: Command, chars: "clear\n" }
+  - { key: R,        mods: Command, action: ClearHistory   }
+  - { key: R,        mods: Command, chars: "\x0c"          }
   - { key: R, mods: Command|Shift, chars: "\x1b\x5b\x41\x0a" }
 
 
@@ -72,13 +73,28 @@ font:
   offset:
       y: 16    # For line spacing.
 
+
 colors:
   # Default colors
   primary:
     background: '0x1e2127'
     foreground: '0xabb2bf'
+
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
     #dim_foreground: '0x9a9a9a'
     bright_foreground: '0xe6efff'
+
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
+  #cursor:
+  #  text: '0x000000'
+  #  cursor: '0xffffff'
 
   # Normal colors
   normal:
@@ -103,6 +119,9 @@ colors:
     white:   '0xe6efff'
 
   # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
   dim:
     black:   '0x1e2127'
     red:     '0xe06c75'
@@ -113,3 +132,9 @@ colors:
     cyan:    '0x56b6c2'
     white:   '0x828791'
 
+  # Indexed Colors
+  #
+  # The indexed colors include all colors from 16 to 256.
+  # When these are not set, they're filled with sensible defaults.
+  #indexed_colors:
+  #  - { index: 16, color: '0x000000' }

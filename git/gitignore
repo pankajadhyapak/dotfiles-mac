@@ -25,7 +25,7 @@ tags
 
 phpactor.log
 npm-debug.log
-bin/
+
 .classpath
 .idea/
 .phpunit.result.cache
