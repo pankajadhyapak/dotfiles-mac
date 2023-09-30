@@ -6,3 +6,4 @@ composer/.composer/composer.lock
 karabiner/.config/karabiner/automatic_backups/*
 mackup/*
 karabiner/automatic_backups/*
+Brewfile.lock.json

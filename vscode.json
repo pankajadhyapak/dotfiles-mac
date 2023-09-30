@@ -14,10 +14,12 @@
     "explorer.confirmDelete": false,
     "editor.fontSize": 16,
     "extensions.ignoreRecommendations": true,
-    "workbench.colorTheme": "Catppuccin Mocha",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "emmet.triggerExpansionOnTab": true,
-
+    "window.titleBarStyle":"native",
+    "apc.electron": {
+      "titleBarStyle": "hidden",
+    },
     "[dart]": {
       "editor.formatOnSave": true,
       "editor.formatOnType": true,
@@ -48,22 +50,9 @@
     },
 
     "go.toolsManagement.autoUpdate": true,
-    "vetur.format.defaultFormatterOptions": {
-      "js-beautify-html": {
-        "wrap_attributes": "force-expand-multiline"
-      },
-      "prettyhtml": {
-        "printWidth": 100,
-        "singleQuote": false,
-        "wrapAttributes": false,
-        "sortAttributes": false
-      }
-    },
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editorAssociations": {
       "*.html": "default"
     },
-    "[proto]": {
-      "editor.defaultFormatter": "mjohns.clang-format"
-    }
+    "workbench.colorTheme": "One Dark Pro Darker",
   }

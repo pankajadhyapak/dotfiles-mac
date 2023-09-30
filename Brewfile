@@ -19,10 +19,6 @@ brew "awscli"
 brew "bat"
 # Linux/OSX/FreeBSD resource monitor
 brew "bpytop"
-# Switch Apache / Valet / CLI configs between PHP versions
-brew "brew-php-switcher"
-# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
-brew "clang-format"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Dependency manager for Cocoa projects
@@ -85,10 +81,6 @@ brew "mackup"
 brew "mas"
 # Replacement for the old crypt package and crypt(1) command
 brew "mcrypt"
-# High performance, distributed memory object caching system
-brew "memcached"
-# Terminal-based visual file manager
-brew "midnight-commander"
 # Open source relational database management system
 brew "mysql-client"
 # Text-based UI library
@@ -97,14 +89,10 @@ brew "ncurses"
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Platform built on V8 to build network applications
-brew "node"
 # Development kit for the Java programming language
 brew "openjdk"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# General-purpose scripting language
-brew "php@7.4"
 # General-purpose scripting language
 brew "php@8.1"
 # Protocol buffers (Google's data interchange format)
@@ -117,10 +105,6 @@ brew "ripgrep"
 brew "s3cmd"
 # Editor of encrypted files
 brew "sops"
-# Cross-shell prompt for astronauts
-brew "starship"
-# Organize software neatly under a single directory tree (e.g. /usr/local)
-brew "stow"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
 # Terraform version manager inspired by rbenv
@@ -143,8 +127,6 @@ brew "wrk"
 brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# In terminal graphical metrics for your *nix system
-brew "zenith"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # A new way of working with Protocol Buffers.
@@ -161,23 +143,20 @@ brew "teamookla/speedtest/speedtest"
 cask "alacritty"
 # Android SDK component
 cask "android-platform-tools"
+# Tools for building Android applications
+cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
-# Utility that prevents the system from going to sleep
-cask "caffeine"
+# App to build and share containerized applications and microservices
+cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # UI toolkit for building applications for mobile, web and desktop
 cask "flutter"
-# Free monospaced font with programming ligatures
-cask "font-fira-code"
-# Developer targeted fonts with a high number of glyphs
-cask "font-fira-code-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
-cask "font-sf-mono-nerd-font"
 # Desktop client for GitHub repositories
 cask "github"
 # Go (golang) IDE
@@ -186,12 +165,12 @@ cask "goland"
 cask "google-chrome"
 # Tool to optimize images to a smaller size
 cask "imageoptim"
+# HTTP and GraphQL Client
+cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Keyboard customizer
 cask "karabiner-elements"
-# GPU-based terminal emulator
-cask "kitty"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # PHP IDE by JetBrains
@@ -216,8 +195,6 @@ cask "quicklook-json"
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
-# System monitor for the menu bar
-cask "stats"
 # Text editor for code, markup and prose
 cask "sublime-text"
 # Native GUI tool for relational databases
@@ -230,15 +207,10 @@ cask "the-unarchiver"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-# Native desktop client for WhatsApp
-cask "whatsapp"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
-mas "ColorSlurp", id: 1287239339
-mas "GarageBand", id: 682658836
-mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
@@ -246,12 +218,8 @@ mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
-vscode "antfu.icons-carbon"
-vscode "astro-build.astro-vscode"
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
-vscode "Catppuccin.catppuccin-vsc"
-vscode "cdonohue.quill-icons"
 vscode "Dart-Code.dart-code"
 vscode "Dart-Code.flutter"
 vscode "dbaeumer.vscode-eslint"
@@ -273,8 +241,6 @@ vscode "PKief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
 vscode "pmndrs.pmndrs"
 vscode "SamuelCharpentier.remove-non-ascii-chars"
-vscode "svelte.svelte-vscode"
-vscode "tamagui.batsignal"
 vscode "Thinker.copy-as-snippet"
 vscode "weekit.flutter-assets-gen2"
 vscode "zhuangtongfa.material-theme"
