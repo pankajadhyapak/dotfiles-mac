@@ -32,3 +32,4 @@ npm-debug.log
 .graphqlrc.json
 .eslintcache
 observer.rb
+docker-data/*

@@ -61,6 +61,9 @@ bindkey '^[[B' down-line-or-beginning-search
 #zoxide
 eval "$(zoxide init zsh)"
 
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export ANDROID_HOME="/Users/pankaj/Library/Android/sdk"
+
 # This loads nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

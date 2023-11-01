@@ -11,7 +11,8 @@ cmd - left : yabai -m window --focus west
 cmd - right : yabai -m window --focus east
 
 ## Quickly restart the yabai launch agent
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+hyper - r : yabai --restart-service
+
 ## Close active application
 hyper - q : $(yabai -m window $(yabai -m query --windows --window | jq -re ".id") --close)
 

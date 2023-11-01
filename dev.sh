@@ -16,3 +16,8 @@ tfenv install 1.3.7
 # node
 nvm install --lts
 nvm use --lts
+
+
+#gobrew
+curl -sLk https://raw.githubusercontent.com/kevincobain2000/gobrew/master/git.io.sh | sh
+gobrew use 1.21

@@ -19,8 +19,6 @@ brew "awscli"
 brew "bat"
 # Linux/OSX/FreeBSD resource monitor
 brew "bpytop"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # General-purpose scripting language
@@ -31,6 +29,10 @@ brew "composer"
 brew "coreutils"
 # File comparison utilities
 brew "diffutils"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# Easiest way to build and release mobile apps
+brew "fastlane"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # OpenType text shaping engine
@@ -47,8 +49,6 @@ brew "git-delta"
 brew "gitleaks"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Database migrations CLI tool
 brew "golang-migrate"
 # Language server for the Go language
@@ -90,7 +90,7 @@ brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Development kit for the Java programming language
-brew "openjdk"
+brew "openjdk@11"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # General-purpose scripting language
@@ -105,8 +105,6 @@ brew "ripgrep"
 brew "s3cmd"
 # Editor of encrypted files
 brew "sops"
-# Send macOS User Notifications from the command-line
-brew "terminal-notifier"
 # Terraform version manager inspired by rbenv
 brew "tfenv"
 # Terminal multiplexer
@@ -147,8 +145,6 @@ cask "android-platform-tools"
 cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
-# App to build and share containerized applications and microservices
-cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # UI toolkit for building applications for mobile, web and desktop
@@ -171,6 +167,8 @@ cask "insomnia"
 cask "iterm2"
 # Keyboard customizer
 cask "karabiner-elements"
+# GPU-based terminal emulator
+cask "kitty"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # PHP IDE by JetBrains
@@ -207,6 +205,8 @@ cask "the-unarchiver"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# JavaScript IDE
+cask "webstorm"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password 7", id: 1333542190
@@ -218,8 +218,11 @@ mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
+vscode "astro-build.astro-vscode"
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
+vscode "Catppuccin.catppuccin-vsc"
+vscode "Catppuccin.catppuccin-vsc-icons"
 vscode "Dart-Code.dart-code"
 vscode "Dart-Code.flutter"
 vscode "dbaeumer.vscode-eslint"
@@ -240,6 +243,7 @@ vscode "ms-vsliveshare.vsliveshare"
 vscode "PKief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
 vscode "pmndrs.pmndrs"
+vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "SamuelCharpentier.remove-non-ascii-chars"
 vscode "Thinker.copy-as-snippet"
 vscode "weekit.flutter-assets-gen2"

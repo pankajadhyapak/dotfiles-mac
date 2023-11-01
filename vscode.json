@@ -40,7 +40,10 @@
       "editor.formatOnSave": true
     },
     "[javascript]": {
-      "editor.formatOnSave": true
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      }
     },
     "[jsx]": {
       "editor.formatOnSave": true
