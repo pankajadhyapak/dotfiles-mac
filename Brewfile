@@ -127,14 +127,14 @@ brew "yarn"
 brew "youtube-dl"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# A new way of working with Protocol Buffers.
-brew "bufbuild/buf/buf"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
+# Simple cli to manage Flutter SDK versions per project
+brew "leoafarias/fvm/fvm"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # GPU-accelerated terminal emulator
@@ -169,6 +169,8 @@ cask "iterm2"
 cask "karabiner-elements"
 # GPU-based terminal emulator
 cask "kitty"
+# Shows the next meeting in the menu bar
+cask "meetingbar"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # PHP IDE by JetBrains

@@ -78,6 +78,7 @@ sketchybar --add alias "Control Centre,WiFi" right --set "Control Centre,WiFi" u
 # sketchybar --add alias "Stats,RAM_mini" right --set "Stats,RAM_mini" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Stats,CPU_mini" right --set "Stats,CPU_mini" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 sketchybar --add alias "Docker Desktop,Item-0" right --set "Docker Desktop,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
+sketchybar --add alias "MeetingBar,Item-0" right --set "MeetingBar,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 sketchybar --add item weather right --set weather update_freq=1800 script="$PLUGIN_DIR/weather.sh" label.padding_left=0 label.padding_right=0
 
 
