@@ -61,9 +61,17 @@ bindkey '^[[B' down-line-or-beginning-search
 #zoxide
 eval "$(zoxide init zsh)"
 
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export ANDROID_HOME="/Users/pankaj/Library/Android/sdk"
 
-# This loads nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+#PATHS
+export PATH="$HOME/go/bin:$HOME/.local/bin:$HOME/.local/bin/scripts:$HOME/.local/bin/scripts/statusbar:$PATH"
+export PATH="$XDG_CONFIG_HOME/composer/vendor/bin:$PATH"
+export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$HOME/.pub-cache/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
+export GOROOT="$HOME/.gobrew/current/go"

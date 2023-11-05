@@ -55,7 +55,7 @@ yabai -m config window_gap                   2
 
 
 # specific space settings
-yabai -m config --space 4  layout           stack
+# yabai -m config --space 4  layout           stack
 
 # free floating windows
 yabai -m config --space 6  layout           float

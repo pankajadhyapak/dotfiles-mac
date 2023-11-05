@@ -89,6 +89,8 @@ brew "ncurses"
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Platform built on V8 to build network applications
+brew "node@18"
 # Development kit for the Java programming language
 brew "openjdk@11"
 # Swiss-army knife of markup format conversion
@@ -133,8 +135,6 @@ brew "felixkratz/formulae/sketchybar"
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
-# Simple cli to manage Flutter SDK versions per project
-brew "leoafarias/fvm/fvm"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # GPU-accelerated terminal emulator
@@ -219,7 +219,6 @@ mas "Pocket", id: 568494494
 mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
-mas "Xcode", id: 497799835
 vscode "astro-build.astro-vscode"
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
