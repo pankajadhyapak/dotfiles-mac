@@ -19,6 +19,8 @@ brew "awscli"
 brew "bat"
 # Linux/OSX/FreeBSD resource monitor
 brew "bpytop"
+# Powerful, clean, object-oriented scripting language
+brew "ruby", link: true
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # General-purpose scripting language
@@ -59,10 +61,14 @@ brew "gpac"
 brew "grep"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Tool for managing apps on iOS devices
+brew "ideviceinstaller"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Dex to Java decompiler
+brew "jadx"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Lazier way to manage everything docker
@@ -79,6 +85,10 @@ brew "lsd"
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
+# Development kit for the Java programming language
+brew "openjdk@11"
+# Reads MySQL binlogs and writes row updates as JSON to Kafka
+brew "maxwell"
 # Replacement for the old crypt package and crypt(1) command
 brew "mcrypt"
 # Open source relational database management system
@@ -91,8 +101,6 @@ brew "tree-sitter"
 brew "neovim"
 # Platform built on V8 to build network applications
 brew "node@18"
-# Development kit for the Java programming language
-brew "openjdk@11"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # General-purpose scripting language
@@ -129,6 +137,8 @@ brew "yarn"
 brew "youtube-dl"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# The best way of working with Protocol Buffers.
+brew "bufbuild/buf/buf"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
 # Simple hotkey-daemon for macOS.
@@ -224,12 +234,14 @@ vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
 vscode "Catppuccin.catppuccin-vsc"
 vscode "Catppuccin.catppuccin-vsc-icons"
+vscode "DaltonMenezes.aura-theme"
 vscode "Dart-Code.dart-code"
 vscode "Dart-Code.flutter"
 vscode "dbaeumer.vscode-eslint"
 vscode "drcika.apc-extension"
 vscode "eamodio.gitlens"
 vscode "EditorConfig.EditorConfig"
+vscode "Equinusocio.moxer-icons"
 vscode "esbenp.prettier-vscode"
 vscode "golang.go"
 vscode "GraphQL.vscode-graphql-syntax"
@@ -246,6 +258,7 @@ vscode "planbcoding.vscode-react-refactor"
 vscode "pmndrs.pmndrs"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "SamuelCharpentier.remove-non-ascii-chars"
+vscode "tamasfe.even-better-toml"
 vscode "Thinker.copy-as-snippet"
 vscode "weekit.flutter-assets-gen2"
 vscode "zhuangtongfa.material-theme"

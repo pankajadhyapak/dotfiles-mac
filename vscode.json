@@ -1,10 +1,14 @@
 {
     "editor.fontFamily": "JetBrainsMono Nerd Font, Hack Nerd Font, Firacode Nerd Font",
+    "workbench.settings.editor": "json",
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "moxer-icons",
+    "workbench.colorTheme": "Aura Dark",
+    // "workbench.colorTheme": "One Dark Pro Darker",
     "editor.lineHeight": 1.8,
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "editor.renderWhitespace": "none",
-    "workbench.startupEditor": "none",
     "files.insertFinalNewline": true,
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
@@ -24,13 +28,13 @@
       "editor.formatOnType": true,
       "editor.rulers": [80],
       "editor.codeActionsOnSave": {
-        "source.fixAll": true
+        "source.fixAll": "explicit"
       },
       "editor.selectionHighlight": false,
       "editor.suggest.snippetsPreventQuickSuggestions": false,
       "editor.suggestSelection": "first",
       "editor.tabCompletion": "onlySnippets",
-      "editor.wordBasedSuggestions": false
+      "editor.wordBasedSuggestions": "off"
     },
     "files.associations": {
       "*.jsx": "javascript"
@@ -41,7 +45,7 @@
     "[javascript]": {
       "editor.formatOnSave": true,
       "editor.codeActionsOnSave": {
-        "source.organizeImports": true
+        "source.organizeImports": "explicit"
       }
     },
     "[jsx]": {
@@ -52,10 +56,8 @@
     },
 
     "go.toolsManagement.autoUpdate": true,
-    "workbench.iconTheme": "material-icon-theme",
     "workbench.editorAssociations": {
       "*.html": "default"
     },
-    "workbench.colorTheme": "One Dark Pro Darker",
     "workbench.editor.empty.hint": "hidden",
   }
