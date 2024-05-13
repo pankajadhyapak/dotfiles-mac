@@ -10,6 +10,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "leoafarias/fvm"
+tap "stripe/stripe-cli"
 tap "teamookla/speedtest"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
@@ -23,6 +24,8 @@ brew "bpytop"
 brew "ruby", link: true
 # Dependency manager for Cocoa projects
 brew "cocoapods"
+# Postgres C API library
+brew "libpq", link: true
 # General-purpose scripting language
 brew "php"
 # Dependency Manager for PHP
@@ -100,7 +103,9 @@ brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Platform built on V8 to build network applications
-brew "node@18"
+brew "node@20"
+# Development kit for the Java programming language
+brew "openjdk@17"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # General-purpose scripting language
@@ -109,6 +114,8 @@ brew "php@8.1"
 brew "protobuf"
 # Rsync for cloud storage
 brew "rclone"
+# Persistent key-value database, with built-in net interface
+brew "redis"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Command-line tool for the Amazon S3 service
@@ -135,6 +142,8 @@ brew "wrk"
 brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # The best way of working with Protocol Buffers.
@@ -145,6 +154,8 @@ brew "felixkratz/formulae/sketchybar"
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
+# Stripe CLI utility
+brew "stripe/stripe-cli/stripe"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # GPU-accelerated terminal emulator
@@ -155,6 +166,8 @@ cask "android-platform-tools"
 cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
+# Server and cloud storage browser
+cask "cyberduck"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # UI toolkit for building applications for mobile, web and desktop
@@ -169,19 +182,19 @@ cask "github"
 cask "goland"
 # Web browser
 cask "google-chrome"
-# Tool to optimize images to a smaller size
+# Tool to optimise images to a smaller size
 cask "imageoptim"
 # HTTP and GraphQL Client
 cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Keyboard customizer
+# Keyboard customiser
 cask "karabiner-elements"
 # GPU-based terminal emulator
 cask "kitty"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
-# App to write, plan, collaborate, and get organized
+# App to write, plan, collaborate, and get organised
 cask "notion"
 # PHP IDE by JetBrains
 cask "phpstorm"
@@ -189,17 +202,17 @@ cask "phpstorm"
 cask "pika"
 # Collaboration platform for API development
 cask "postman"
-# QuickLook plug-in that renders source code with syntax highlighting
+# Quick Look plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
-# QuickLook generator for Markdown files
+# Quick Look generator for Markdown files
 cask "qlmarkdown"
-# QuickLook plugin to view patch files
+# Quick Look plugin to view patch files
 cask "qlprettypatch"
-# QuickLook plugin for plaintext files without an extension
+# Quick Look plugin for plaintext files without an extension
 cask "qlstephen"
-# QuickLook plugin for CSV files
+# Quick Look plugin for CSV files
 cask "quicklook-csv"
-# QuickLook plugin for JSON files
+# Quick Look plugin for JSON files
 cask "quicklook-json"
 # Control your tools with a few keystrokes
 cask "raycast"
@@ -219,46 +232,54 @@ cask "visual-studio-code"
 cask "vlc"
 # JavaScript IDE
 cask "webstorm"
+# Multiplayer code editor
+cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
+mas "NotePlan", id: 1505432629
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
 mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
+mas "Transporter", id: 1450874784
 vscode "astro-build.astro-vscode"
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
-vscode "Catppuccin.catppuccin-vsc"
-vscode "Catppuccin.catppuccin-vsc-icons"
-vscode "DaltonMenezes.aura-theme"
-vscode "Dart-Code.dart-code"
-vscode "Dart-Code.flutter"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
+vscode "daltonmenezes.aura-theme"
+vscode "dart-code.dart-code"
+vscode "dart-code.flutter"
 vscode "dbaeumer.vscode-eslint"
 vscode "drcika.apc-extension"
 vscode "eamodio.gitlens"
-vscode "EditorConfig.EditorConfig"
-vscode "Equinusocio.moxer-icons"
+vscode "editorconfig.editorconfig"
+vscode "equinusocio.moxer-icons"
 vscode "esbenp.prettier-vscode"
+vscode "github.copilot"
+vscode "github.copilot-chat"
 vscode "golang.go"
-vscode "GraphQL.vscode-graphql-syntax"
+vscode "graphql.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
 vscode "kangping.protobuf"
-vscode "Meezilla.json"
+vscode "koujir.gruvchad"
+vscode "meezilla.json"
 vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.remote-explorer"
+vscode "ms-vscode.sublime-keybindings"
 vscode "ms-vsliveshare.vsliveshare"
-vscode "PKief.material-icon-theme"
+vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
 vscode "pmndrs.pmndrs"
 vscode "robert-brunhage.flutter-riverpod-snippets"
-vscode "SamuelCharpentier.remove-non-ascii-chars"
+vscode "samuelcharpentier.remove-non-ascii-chars"
 vscode "tamasfe.even-better-toml"
-vscode "Thinker.copy-as-snippet"
+vscode "thinker.copy-as-snippet"
 vscode "weekit.flutter-assets-gen2"
 vscode "zhuangtongfa.material-theme"

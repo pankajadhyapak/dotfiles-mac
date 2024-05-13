@@ -3,8 +3,7 @@
     "workbench.settings.editor": "json",
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "moxer-icons",
-    "workbench.colorTheme": "Aura Dark",
-    // "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorTheme": "One Dark Pro Darker",
     "editor.lineHeight": 1.8,
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
@@ -21,7 +20,7 @@
     "emmet.triggerExpansionOnTab": true,
     "window.titleBarStyle":"native",
     "apc.electron": {
-      "titleBarStyle": "hidden",
+      "titleBarStyle": "hidden"
     },
     "[dart]": {
       "editor.formatOnSave": true,
@@ -60,4 +59,6 @@
       "*.html": "default"
     },
     "workbench.editor.empty.hint": "hidden",
+    "window.customTitleBarVisibility": "never",
+    "javascript.updateImportsOnFileMove.enabled": "always"
   }
