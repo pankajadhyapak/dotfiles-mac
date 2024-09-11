@@ -78,6 +78,7 @@ yabai -m rule --add app="^Android Studio$"  space=4
 
 #database
 yabai -m rule --add app="^TablePlus$"       space=5
+yabai -m rule --add app="^Postman$"         space=5
 
 yabai -m rule --add app="^Slack$"           space=7
 
@@ -89,7 +90,7 @@ yabai -m rule --add app="^Edison Mail$"     space=9
 # ignore apps
 ignoreApps="^(Podcasts|Books|System Settings|Keychain Access|Reminders|TickTick|Raycast|AppCleaner|System Preferences|Karabiner-Elements|Karabiner-EventViewer|Finder|Alfred Preferences|Disk Utility|System Information|Activity Monitor|Path Finder|Docker Desktop|App Store)$"
 yabai -m rule --add app="${ignoreApps}" manage=off
-yabai -m rule --add app="^(LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+yabai -m rule --add app="^(LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Music)$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off

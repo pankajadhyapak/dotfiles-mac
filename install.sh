@@ -26,8 +26,9 @@ brew bundle
 
 #gitconfig
 rm -rf "$HOME/.gitignore"
-ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig"
+rm -rf "$HOME/.gitconfig"
 ln -sf "$DOTFILES/git/gitignore" "$HOME/.gitignore"
+cp "$DOTFILES/git/gitconfig" "$HOME/.gitconfig"
 git config --global core.excludesFile  "$HOME/.gitignore"
 
 #Vscode

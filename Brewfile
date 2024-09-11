@@ -46,6 +46,8 @@ brew "harfbuzz"
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
+brew "gh"
 # Distributed revision control system
 brew "git"
 # Syntax-highlighting pager for git and diff output
@@ -140,10 +142,10 @@ brew "wimlib"
 brew "wrk"
 # JavaScript package manager
 brew "yarn"
-# Download YouTube videos from the command-line
-brew "youtube-dl"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # The best way of working with Protocol Buffers.
@@ -172,9 +174,9 @@ cask "cyberduck"
 cask "dropbox"
 # UI toolkit for building applications for mobile, web and desktop
 cask "flutter"
-# Developer targeted fonts with a high number of glyphs
+cask "font-cascadia-mono"
+cask "font-cascadia-mono-nf"
 cask "font-hack-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
 # Desktop client for GitHub repositories
 cask "github"
@@ -182,6 +184,8 @@ cask "github"
 cask "goland"
 # Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
 # HTTP and GraphQL Client
@@ -250,8 +254,7 @@ vscode "astro-build.astro-vscode"
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
 vscode "catppuccin.catppuccin-vsc"
-vscode "catppuccin.catppuccin-vsc-icons"
-vscode "daltonmenezes.aura-theme"
+vscode "chukwuamaka.csvtojson-converter"
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
 vscode "dbaeumer.vscode-eslint"
@@ -269,6 +272,9 @@ vscode "janisdd.vscode-edit-csv"
 vscode "kangping.protobuf"
 vscode "koujir.gruvchad"
 vscode "meezilla.json"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
 vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.remote-explorer"
@@ -277,6 +283,7 @@ vscode "ms-vsliveshare.vsliveshare"
 vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
 vscode "pmndrs.pmndrs"
+vscode "rangav.vscode-thunder-client"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
 vscode "tamasfe.even-better-toml"
