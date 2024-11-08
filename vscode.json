@@ -2,7 +2,6 @@
     "editor.fontFamily": "Cascadia Mono NF, JetBrainsMono Nerd Font, Hack Nerd Font, Firacode Nerd Font",
     "workbench.settings.editor": "json",
     "workbench.startupEditor": "none",
-    "workbench.iconTheme": "moxer-icons",
     "workbench.colorTheme": "One Dark Pro",
     "editor.lineHeight": 1.9,
     "editor.minimap.enabled": false,

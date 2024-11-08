@@ -22,7 +22,7 @@ function dropLine() {
     fi
 }
 
-function fd() {
+function fds() {
   preview="git diff $@ --color=always {1} | delta "
   git diff $@ --name-only | fzf --header "Changed files" --preview $preview | pbcopy
 }

@@ -21,9 +21,11 @@ brew "bat"
 # Linux/OSX/FreeBSD resource monitor
 brew "bpytop"
 # Powerful, clean, object-oriented scripting language
-brew "ruby", link: true
+brew "ruby"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
 # Postgres C API library
 brew "libpq", link: true
 # General-purpose scripting language
@@ -34,10 +36,6 @@ brew "composer"
 brew "coreutils"
 # File comparison utilities
 brew "diffutils"
-# Send macOS User Notifications from the command-line
-brew "terminal-notifier"
-# Easiest way to build and release mobile apps
-brew "fastlane"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # OpenType text shaping engine
@@ -72,6 +70,8 @@ brew "ideviceinstaller"
 brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Development kit for the Java programming language
+brew "openjdk"
 # Dex to Java decompiler
 brew "jadx"
 # Lightweight and flexible command-line JSON processor
@@ -91,7 +91,7 @@ brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
 # Development kit for the Java programming language
-brew "openjdk@11"
+# brew "openjdk@11"
 # Reads MySQL binlogs and writes row updates as JSON to Kafka
 brew "maxwell"
 # Replacement for the old crypt package and crypt(1) command
@@ -108,10 +108,8 @@ brew "neovim"
 brew "node@20"
 # Development kit for the Java programming language
 brew "openjdk@17"
-# Swiss-army knife of markup format conversion
-brew "pandoc"
-# General-purpose scripting language
-brew "php@8.1"
+# Development kit for the Java programming language
+# brew "openjdk@21"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Rsync for cloud storage
@@ -124,6 +122,8 @@ brew "ripgrep"
 brew "s3cmd"
 # Editor of encrypted files
 brew "sops"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
 # Terraform version manager inspired by rbenv
 brew "tfenv"
 # Terminal multiplexer
@@ -188,18 +188,14 @@ cask "google-chrome"
 cask "google-drive"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
-# HTTP and GraphQL Client
-cask "insomnia"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
 # Keyboard customiser
 cask "karabiner-elements"
 # GPU-based terminal emulator
 cask "kitty"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
-# App to write, plan, collaborate, and get organised
-cask "notion"
 # PHP IDE by JetBrains
 cask "phpstorm"
 # Colour picker for colours onscreen
@@ -226,8 +222,6 @@ cask "sf-symbols"
 cask "sublime-text"
 # Native GUI tool for relational databases
 cask "tableplus"
-# Desktop client for Telegram messenger
-cask "telegram-desktop"
 # Unpacks archive files
 cask "the-unarchiver"
 # Open-source code editor
@@ -236,13 +230,11 @@ cask "visual-studio-code"
 cask "vlc"
 # JavaScript IDE
 cask "webstorm"
-# Multiplayer code editor
-cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
-mas "NotePlan", id: 1505432629
+mas "HP Smart", id: 1474276998
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
@@ -250,10 +242,9 @@ mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
 mas "Transporter", id: 1450874784
-vscode "astro-build.astro-vscode"
+mas "Xcode", id: 497799835
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
-vscode "catppuccin.catppuccin-vsc"
 vscode "chukwuamaka.csvtojson-converter"
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
@@ -261,7 +252,6 @@ vscode "dbaeumer.vscode-eslint"
 vscode "drcika.apc-extension"
 vscode "eamodio.gitlens"
 vscode "editorconfig.editorconfig"
-vscode "equinusocio.moxer-icons"
 vscode "esbenp.prettier-vscode"
 vscode "github.copilot"
 vscode "github.copilot-chat"
@@ -270,7 +260,6 @@ vscode "graphql.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
 vscode "kangping.protobuf"
-vscode "koujir.gruvchad"
 vscode "meezilla.json"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
@@ -279,10 +268,8 @@ vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.sublime-keybindings"
-vscode "ms-vsliveshare.vsliveshare"
 vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
-vscode "pmndrs.pmndrs"
 vscode "rangav.vscode-thunder-client"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
