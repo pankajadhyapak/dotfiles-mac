@@ -71,7 +71,7 @@ brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Development kit for the Java programming language
-brew "openjdk"
+# brew "openjdk"
 # Dex to Java decompiler
 brew "jadx"
 # Lightweight and flexible command-line JSON processor
@@ -230,11 +230,14 @@ cask "visual-studio-code"
 cask "vlc"
 # JavaScript IDE
 cask "webstorm"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "HP Smart", id: 1474276998
+mas "Microsoft Outlook", id: 985367838
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
@@ -270,7 +273,7 @@ vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.sublime-keybindings"
 vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
-vscode "rangav.vscode-thunder-client"
+vscode "postman.postman-for-vscode"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
 vscode "tamasfe.even-better-toml"
