@@ -15,6 +15,8 @@
 
 4. ```./install.sh```
 
+5. ```sudo softwareupdate --install-rosetta --agree-to-license```
+
 # Dev deps
 ```./dev.sh```
 

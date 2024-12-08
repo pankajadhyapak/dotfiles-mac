@@ -5,8 +5,6 @@ tap "dart-lang/dart"
 tap "epk/epk"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "leoafarias/fvm"
@@ -24,6 +22,8 @@ brew "bpytop"
 brew "ruby"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
 # Postgres C API library
@@ -36,6 +36,12 @@ brew "composer"
 brew "coreutils"
 # File comparison utilities
 brew "diffutils"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # OpenType text shaping engine
@@ -70,8 +76,6 @@ brew "ideviceinstaller"
 brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Development kit for the Java programming language
-# brew "openjdk"
 # Dex to Java decompiler
 brew "jadx"
 # Lightweight and flexible command-line JSON processor
@@ -90,12 +94,6 @@ brew "lsd"
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
-# Development kit for the Java programming language
-# brew "openjdk@11"
-# Reads MySQL binlogs and writes row updates as JSON to Kafka
-brew "maxwell"
-# Replacement for the old crypt package and crypt(1) command
-brew "mcrypt"
 # Open source relational database management system
 brew "mysql-client"
 # Text-based UI library
@@ -108,8 +106,6 @@ brew "neovim"
 brew "node@20"
 # Development kit for the Java programming language
 brew "openjdk@17"
-# Development kit for the Java programming language
-# brew "openjdk@21"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Rsync for cloud storage
@@ -152,10 +148,6 @@ brew "zoxide"
 brew "bufbuild/buf/buf"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
-# Simple hotkey-daemon for macOS.
-brew "koekeishiya/formulae/skhd"
-# A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Ookla Speedtest
@@ -192,8 +184,6 @@ cask "imageoptim"
 cask "jetbrains-toolbox"
 # Keyboard customiser
 cask "karabiner-elements"
-# GPU-based terminal emulator
-cask "kitty"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
 # PHP IDE by JetBrains
@@ -228,8 +218,6 @@ cask "the-unarchiver"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-# JavaScript IDE
-cask "webstorm"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
 # Video communication and virtual meeting platform
@@ -237,10 +225,9 @@ cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "HP Smart", id: 1474276998
-mas "Microsoft Outlook", id: 985367838
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Pocket", id: 568494494
+mas "Save to Pocket", id: 1477385213
 mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641

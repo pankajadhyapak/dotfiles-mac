@@ -35,14 +35,13 @@ git config --global core.excludesFile  "$HOME/.gitignore"
 rm -rf "$HOME/Library/Application Support/Code/User/settings.json"
 ln -sf "$DOTFILES/vscode.json" "$HOME/Library/Application Support/Code/User/settings.json"
 
-#kitty
-rm -rf "$XDG_CONFIG_HOME/kitty"
-ln -s "$DOTFILES/kitty" "$XDG_CONFIG_HOME"
+#wezterm
+rm -rf "$XDG_CONFIG_HOME/wezterm"
+ln -s "$DOTFILES/wezterm" "$XDG_CONFIG_HOME"
 
 #alacritty
 rm -rf "$XDG_CONFIG_HOME/alacritty"
 ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
-
 
 # Zsh
 mkdir -p "$XDG_CONFIG_HOME/zsh"
@@ -54,7 +53,6 @@ ln -sf "$DOTFILES/zsh/zsh-prompt" "$XDG_CONFIG_HOME/zsh/zsh-prompt"
 printf '#!/bin/zsh
 
 source "$ZDOTDIR/zshrc"' > "$XDG_CONFIG_HOME/zsh/.zshrc"
-
 
 #skhd
 rm -rf "$XDG_CONFIG_HOME/skhd"
@@ -80,4 +78,4 @@ chmod -R +x "$DOTFILES/sketchybar"
 touch ${HOME}/.hushlogin
 
 # Set macOS preferences
-source .macos
+# source .macos
