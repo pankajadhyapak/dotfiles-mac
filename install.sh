@@ -54,13 +54,9 @@ printf '#!/bin/zsh
 
 source "$ZDOTDIR/zshrc"' > "$XDG_CONFIG_HOME/zsh/.zshrc"
 
-#skhd
-rm -rf "$XDG_CONFIG_HOME/skhd"
-ln -s "$DOTFILES/skhd" "$XDG_CONFIG_HOME"
-
-#yabai
-rm -rf "$XDG_CONFIG_HOME/yabai"
-ln -s "$DOTFILES/yabai" "$XDG_CONFIG_HOME"
+#Aersospace
+rm -rf "$XDG_CONFIG_HOME/aerospace"
+ln -s "$DOTFILES/aerospace" "$XDG_CONFIG_HOME"
 
 #karabiner
 rm -rf "$XDG_CONFIG_HOME/karabiner"
