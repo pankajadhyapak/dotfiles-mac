@@ -124,7 +124,27 @@ if.app-id = 'com.jetbrains.PhpStorm'
 run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace 7']
+
+[[on-window-detected]]
+if.app-id = 'com.readdle.smartemail-Mac'
+run = ['move-node-to-workspace 9']
+
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyapp.TablePlus'
+run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.electron.dockerdesktop'
 run = 'layout floating'
 
 # [[on-window-detected]]
@@ -143,10 +163,22 @@ run = 'layout floating'
 # if.app-id = 'org.gnu.Emacs'
 # run = 'layout floating'
 
+[workspace-to-monitor-force-assignment]
+1 = 'main'                            # Monitor sequence number from left to right. 1-based indexing
+2 = 'main'                       # Main monitor
+3 = 'main'                  # Non-main monitor in case when there are only two monitors
+4 = 'main'                  # Non-main monitor in case when there are only two monitors
+5 = 'main'                  # Non-main monitor in case when there are only two monitors
+6 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+7 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+8 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+9 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+10 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+
 [gaps]
-inner.horizontal = 2
-inner.vertical = 2
-outer.left = 2
-outer.bottom = 2
-outer.top = 0
-outer.right = 2
+inner.horizontal = 0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = 0
+outer.top = 32
+outer.right = 0

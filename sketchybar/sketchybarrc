@@ -34,27 +34,32 @@ sketchybar --add item apple.logo left \
 
 sketchybar --add event aerospace_workspace_change
 
-for sid in $(aerospace list-workspaces --all); do
-    sketchybar --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
-        --set space.$sid \
-         icon=${sid}                     \
-                              label.padding_left=0                        \
-                              label.padding_right=6                       \
-                              icon.padding_left=4                        \
-                              icon.padding_right=1                       \
-                              background.padding_left=4                   \
-                              background.padding_right=4                  \
-                              background.color=0xff61afef                \
-                              background.corner_radius=4                 \
-                              background.height=22                       \
-                              background.drawing=on                      \
-                              icon.drawing=on                          \
-        click_script="aerospace workspace $sid" \
-        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+for m in $(aerospace list-monitors | awk '{print $1}')
+do
+    for i in $(aerospace list-workspaces --monitor $m)
+    do
+        sid=$i
+        sketchybar --add item space.$sid left \
+            --subscribe space.$sid aerospace_workspace_change \
+            --set space.$sid        \
+                              icon=${sid}                \
+                              label.padding_left=0       \
+                              label.padding_right=6      \
+                              icon.padding_left=4        \
+                              icon.padding_right=1       \
+                              background.padding_left=4  \
+                              background.padding_right=4 \
+                              background.color=0xff61afef\
+                              background.corner_radius=4 \
+                              background.height=22       \
+                              background.drawing=on      \
+                              icon.drawing=on            \
+                              display=$m                 \
+                              script="$CONFIG_DIR/plugins/aerospace.sh $sid" \
+                              click_script="aerospace workspace $sid"
+    done
 done
 
-sketchybar --default "${default[@]}"
 
 sketchybar --add item chevron left \
            --set chevron icon= label.drawing=off \
