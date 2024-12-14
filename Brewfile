@@ -6,7 +6,6 @@ tap "epk/epk"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
 tap "leoafarias/fvm"
 tap "stripe/stripe-cli"
 tap "teamookla/speedtest"
@@ -233,6 +232,7 @@ mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
+mas "Apple Configurator", id: 1037126344
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
 vscode "chukwuamaka.csvtojson-converter"
