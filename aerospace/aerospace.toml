@@ -18,11 +18,6 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 
 [mode.main.binding]
 ctrl-alt-shift-cmd-enter = 'exec-and-forget open -n -a Alacritty'
-alt-ctrl-b = '''exec-and-forget osascript <<EOF
-tell application "Firefox" to activate
-delay 0.5
-tell application "System Events" to keystroke "n" using command down
-EOF'''
 alt-tab = 'workspace-back-and-forth'
 alt-shift-q = 'close'
 
@@ -98,10 +93,6 @@ l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
 
-# Application to workspace mapping
-# [[on-window-detected]]
-# if.app-id = 'com.github.wez.wezterm'
-# run = "layout floating"
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
@@ -135,7 +126,6 @@ run = ['move-node-to-workspace 9']
 if.app-id = 'com.postmanlabs.mac'
 run = ['move-node-to-workspace 5']
 
-
 [[on-window-detected]]
 if.app-id = 'com.tinyapp.TablePlus'
 run = ['move-node-to-workspace 5']
@@ -147,18 +137,6 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.electron.dockerdesktop'
 run = 'layout floating'
-
-# [[on-window-detected]]
-# if.app-id = 'com.microsoft.teams2'
-# run = "move-node-to-workspace 5"
-
-# [[on-window-detected]]
-# if.app-id = 'org.qutebrowser.qutebrowser'
-# run = 'layout tiling'
-
-# [[on-window-detected]]
-# if.app-id = 'com.openai.chat'
-# run = 'layout floating'
 
 # [[on-window-detected]]
 # if.app-id = 'org.gnu.Emacs'
