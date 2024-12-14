@@ -42,30 +42,30 @@ do
         sketchybar --add item space.$sid left \
             --subscribe space.$sid aerospace_workspace_change \
             --set space.$sid        \
-                              icon=${sid}                \
-                              label.padding_left=0       \
-                              label.padding_right=6      \
-                              icon.padding_left=4        \
-                              icon.padding_right=1       \
-                              background.padding_left=4  \
-                              background.padding_right=4 \
-                              background.color=0xff61afef\
-                              background.corner_radius=4 \
-                              background.height=22       \
-                              background.drawing=on      \
-                              icon.drawing=on            \
-                              display=$m                 \
-                              script="$CONFIG_DIR/plugins/aerospace.sh $sid" \
-                              click_script="aerospace workspace $sid"
+            icon=${sid}                \
+            label.padding_left=0       \
+            label.padding_right=6      \
+            icon.padding_left=4        \
+            icon.padding_right=1       \
+            background.padding_left=4  \
+            background.padding_right=4 \
+            background.color=0xff61afef\
+            background.corner_radius=4 \
+            background.height=22       \
+            background.drawing=on      \
+            icon.drawing=on            \
+            display=$m                 \
+            script="$CONFIG_DIR/plugins/aerospace.sh $sid" \
+            click_script="aerospace workspace $sid"
     done
 done
-
 
 sketchybar --add item chevron left \
            --set chevron icon= label.drawing=off \
            --add item front_app left \
            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
+
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
 # Additional position (e.g. center) are available, see:
@@ -73,15 +73,14 @@ sketchybar --add item chevron left \
 
 sketchybar --add item clock_in  right --set clock_in  update_freq=10   script="$PLUGIN_DIR/clock_in.sh"
 sketchybar --add item clock     right --set clock     update_freq=10   script="$PLUGIN_DIR/clock.sh"    label.padding_left=0 label.padding_right=0
-sketchybar --add alias "Control Center,Battery" right --set "Control Center,Battery" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
-# sketchybar --add alias "TextInputMenuAgent,Item-0" right --set "TextInputMenuAgent,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
-sketchybar --add alias "Control Center,WiFi" right --set "Control Center,WiFi" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
+sketchybar --add alias "Control Centre,Battery" right --set "Control Centre,Battery" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
+sketchybar --add alias "Control Centre,WiFi" right --set "Control Centre,WiFi" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Stats,RAM_mini" right --set "Stats,RAM_mini" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Stats,CPU_mini" right --set "Stats,CPU_mini" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Docker Desktop,Item-0" right --set "Docker Desktop,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
+# sketchybar --add alias "TextInputMenuAgent,Item-0" right --set "TextInputMenuAgent,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 sketchybar --add alias "MeetingBar,Item-0" right --set "MeetingBar,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 sketchybar --add item weather right --set weather update_freq=1800 script="$PLUGIN_DIR/weather.sh" label.padding_left=0 label.padding_right=8
-
 
 sketchybar --update
 
