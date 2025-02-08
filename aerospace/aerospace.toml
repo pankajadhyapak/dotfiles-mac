@@ -5,7 +5,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
-after-startup-command = ['exec-and-forget sketchybar', 'exec-and-forget switch_mode main']
+after-startup-command = ['exec-and-forget brew services restart sketchybar', 'exec-and-forget switch_mode main']
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # on-focus-changed = "move-mouse window-lazy-center"
@@ -107,11 +107,19 @@ if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
 if.app-id = 'com.jetbrains.goland'
 run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.PhpStorm'
+run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
+if.app-id = 'com.google.android.studio'
 run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
@@ -132,6 +140,14 @@ run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'system settings'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.AppStore'
 run = 'layout floating'
 
 [[on-window-detected]]

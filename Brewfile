@@ -6,7 +6,9 @@ tap "epk/epk"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "koekeishiya/formulae"
 tap "leoafarias/fvm"
+tap "nikitabobko/tap"
 tap "stripe/stripe-cli"
 tap "teamookla/speedtest"
 # Codec library for encoding and decoding AV1 video streams
@@ -27,8 +29,6 @@ brew "colima"
 brew "icu4c@76"
 # Postgres C API library
 brew "libpq", link: true
-# General-purpose scripting language
-brew "php"
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
@@ -105,6 +105,8 @@ brew "neovim"
 brew "node@20"
 # Development kit for the Java programming language
 brew "openjdk@17"
+# General-purpose scripting language
+brew "php@8.2"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Rsync for cloud storage
@@ -124,7 +126,7 @@ brew "tfenv"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
-brew "trash"
+brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Manage the desktop wallpaper
@@ -151,6 +153,8 @@ brew "felixkratz/formulae/sketchybar"
 brew "stripe/stripe-cli/stripe"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Android SDK component
@@ -183,8 +187,6 @@ cask "imageoptim"
 cask "jetbrains-toolbox"
 # Keyboard customiser
 cask "karabiner-elements"
-# Shows the next meeting in the menu bar
-cask "meetingbar"
 # PHP IDE by JetBrains
 cask "phpstorm"
 # Colour picker for colours onscreen
@@ -217,12 +219,15 @@ cask "the-unarchiver"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# JavaScript IDE
+cask "webstorm"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
+mas "Apple Configurator", id: 1037126344
 mas "HP Smart", id: 1474276998
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -232,9 +237,10 @@ mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
-mas "Apple Configurator", id: 1037126344
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
 vscode "chukwuamaka.csvtojson-converter"
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
@@ -263,6 +269,7 @@ vscode "planbcoding.vscode-react-refactor"
 vscode "postman.postman-for-vscode"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
+vscode "swyphcosmo.spellchecker"
 vscode "tamasfe.even-better-toml"
 vscode "thinker.copy-as-snippet"
 vscode "weekit.flutter-assets-gen2"

@@ -73,8 +73,8 @@ sketchybar --add item chevron left \
 
 sketchybar --add item clock_in  right --set clock_in  update_freq=10   script="$PLUGIN_DIR/clock_in.sh"
 sketchybar --add item clock     right --set clock     update_freq=10   script="$PLUGIN_DIR/clock.sh"    label.padding_left=0 label.padding_right=0
-sketchybar --add alias "Control Centre,Battery" right --set "Control Centre,Battery" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
-sketchybar --add alias "Control Centre,WiFi" right --set "Control Centre,WiFi" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
+sketchybar --add alias "Control Center,Battery" right --set "Control Center,Battery" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
+sketchybar --add alias "Control Center,WiFi" right --set "Control Center,WiFi" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Stats,RAM_mini" right --set "Stats,RAM_mini" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Stats,CPU_mini" right --set "Stats,CPU_mini" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Docker Desktop,Item-0" right --set "Docker Desktop,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
