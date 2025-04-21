@@ -1,8 +1,8 @@
 {
-  "editor.fontFamily": "Cascadia Mono NF, JetBrainsMono Nerd Font, Hack Nerd Font, Firacode Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font,Cascadia Mono NF,Hack Nerd Font,Firacode Nerd Font",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "One Dark Pro Night Flat",
   "editor.lineHeight": 1.9,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
@@ -23,14 +23,14 @@
   },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
+    "source.fixAll": "always"
   },
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.rulers": [80],
     "editor.codeActionsOnSave": {
-      "source.fixAll": "explicit"
+      "source.fixAll": "always"
     },
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -47,7 +47,7 @@
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+      "source.organizeImports": "always"
     },
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -64,6 +64,5 @@
   "workbench.editor.empty.hint": "hidden",
   "window.customTitleBarVisibility": "never",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "github.copilot.editor.enableAutoCompletions": true,
   "workbench.iconTheme": "catppuccin-mocha"
 }

@@ -25,8 +25,6 @@ brew "ruby"
 brew "cocoapods"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
 # Postgres C API library
 brew "libpq", link: true
 # Dependency Manager for PHP
@@ -45,6 +43,8 @@ brew "docker-credential-helper"
 brew "fd"
 # OpenType text shaping engine
 brew "harfbuzz"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
@@ -228,6 +228,7 @@ cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "Apple Configurator", id: 1037126344
+mas "AusweisApp", id: 948660805
 mas "HP Smart", id: 1474276998
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -256,6 +257,7 @@ vscode "graphql.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
 vscode "kangping.protobuf"
+vscode "mathiasfrohlich.kotlin"
 vscode "meezilla.json"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
