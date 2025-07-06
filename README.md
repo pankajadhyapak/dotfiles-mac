@@ -1,11 +1,9 @@
 # macOS dotfiles
 
  ### Using
-- [yabai (for wimdow managemt)](https://github.com/koekeishiya/yabai)
-- [skhd (key binding)](https://github.com/koekeishiya/skhd)
+- [AeroSpace (for window management)](https://github.com/nikitabobko/AeroSpace)
 - [SketchyBar (top bar)](https://github.com/FelixKratz/SketchyBar)
 - [catppuccin theme](https://github.com/catppuccin/catppuccin)
-
 
 1. ```xcode-select --install```
 
