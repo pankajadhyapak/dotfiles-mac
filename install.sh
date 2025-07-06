@@ -74,4 +74,4 @@ chmod -R +x "$DOTFILES/sketchybar"
 touch ${HOME}/.hushlogin
 
 # Set macOS preferences
-# source .macos
+source .macos
