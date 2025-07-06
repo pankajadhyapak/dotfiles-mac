@@ -73,5 +73,9 @@ chmod -R +x "$DOTFILES/sketchybar"
 
 touch ${HOME}/.hushlogin
 
+# Copy and set wallpaper
+cp wallpaper.jpeg ~/Pictures
+wallpaper set ~/Pictures/wallpaper.jpeg
+
 # Set macOS preferences
 source .macos
