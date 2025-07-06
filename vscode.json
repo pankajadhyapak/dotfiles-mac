@@ -64,5 +64,20 @@
   "workbench.editor.empty.hint": "hidden",
   "window.customTitleBarVisibility": "never",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.iconTheme": "catppuccin-mocha"
+  "workbench.iconTheme": "catppuccin-mocha",
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": true,
+  "kilo-code.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/var/folders/40/qgtv5xcd0sq4nd_5jtc446bw0000gn/T/postman-http-request-post-response.instructions.md": true,
+    "/var/folders/40/qgtv5xcd0sq4nd_5jtc446bw0000gn/T/postman-http-request-pre-request.instructions.md": true
+  }
 }

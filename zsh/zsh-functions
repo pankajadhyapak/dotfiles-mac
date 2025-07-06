@@ -87,25 +87,39 @@ function ms(){
 }
 
 
+# t - smart tmux session manager
+#
+# - If you are outside a tmux session, it will try to attach to a session named
+#   after the current directory. If no such session exists, it will create it.
+# - If you are inside a tmux session, it will switch to a session named after
+#   the current directory. If no such session exists, it will be created and
+#   then switched to.
+#
+# Session names are derived from the current directory's basename, with spaces,
+# dots, and hyphens replaced by underscores.
 function t(){
-  FOLDER=$(basename $(pwd))
-  SESSION_NAME=$(echo "$FOLDER" | tr ' ' '_' | tr '.' '_')
-  SESSION=$(tmux list-sessions | grep -F "$SESSION_NAME" | awk '{print $1}') # find existing session
-  SESSION=${SESSION//:/} # grab session name
-  if [ "$TMUX" = "" ]; then # if not currently in tmux
-    if [ "$SESSION" = "" ]; then # session does not exist
-        cd $(pwd) || exit 1 # jump to directory
-        tmux new-session -s "$SESSION_NAME" # create session and attach
-    else # session exists
-        tmux attach -t "$SESSION" # attach to session
+  # Use current directory name for session name, replacing spaces, dots, and hyphens
+  local SESSION_NAME
+  SESSION_NAME=$(basename "$PWD" | tr ' .-' '_')
+
+  # Check if we are inside a tmux session
+  if [ -n "$TMUX" ]; then
+    # We are in tmux.
+    # Check if the session exists. The `2>/dev/null` suppresses the error message
+    # if the session does not exist.
+    if ! tmux has-session -t="$SESSION_NAME" 2>/dev/null; then
+      # Session does not exist, so create it detached.
+      # It will inherit the current path.
+      tmux new-session -d -s "$SESSION_NAME"
     fi
-  else # currently in tmux
-      if [ "$SESSION" = "" ]; then # session does not exist
-          cd $(pwd) || exit 1 # jump to directory
-          tmux new-session -d -s "$SESSION_NAME" # create session
-          tmux switch-client -t "$SESSION_NAME" # attach to session
-      else # session exists
-          tmux switch-client -t "$SESSION" # switch to session
-      fi
+    # Session now exists, attach to it.
+    # `attach-session` is used because it will switch the client if run from within tmux,
+    # which is more robust than `switch-client` and avoids "no current client" errors.
+    tmux attach-session -t "$SESSION_NAME"
+  else
+    # We are not in tmux.
+    # `attach-session` will fail if the session does not exist.
+    # In that case, the `||` will execute `new-session`.
+    tmux attach-session -t "$SESSION_NAME" 2>/dev/null || tmux new-session -s "$SESSION_NAME"
   fi
 }

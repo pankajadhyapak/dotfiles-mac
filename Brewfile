@@ -43,8 +43,6 @@ brew "docker-credential-helper"
 brew "fd"
 # OpenType text shaping engine
 brew "harfbuzz"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
@@ -69,6 +67,8 @@ brew "gpac"
 brew "grep"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
 # Tool for managing apps on iOS devices
 brew "ideviceinstaller"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
@@ -87,6 +87,10 @@ brew "lazygit"
 brew "lf"
 # C and C++ client library to the memcached server
 brew "libmemcached"
+# Text-based UI library
+brew "ncurses"
+# Additional guest agents for Lima
+brew "lima-additional-guestagents"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Keep your Mac's application settings in sync
@@ -95,8 +99,6 @@ brew "mackup"
 brew "mas"
 # Open source relational database management system
 brew "mysql-client"
-# Text-based UI library
-brew "ncurses"
 # Parser generator tool and incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -257,6 +259,7 @@ vscode "graphql.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
 vscode "kangping.protobuf"
+vscode "kilocode.kilo-code"
 vscode "mathiasfrohlich.kotlin"
 vscode "meezilla.json"
 vscode "ms-python.debugpy"
@@ -274,5 +277,6 @@ vscode "samuelcharpentier.remove-non-ascii-chars"
 vscode "swyphcosmo.spellchecker"
 vscode "tamasfe.even-better-toml"
 vscode "thinker.copy-as-snippet"
+vscode "tomoki1207.pdf"
 vscode "weekit.flutter-assets-gen2"
 vscode "zhuangtongfa.material-theme"
