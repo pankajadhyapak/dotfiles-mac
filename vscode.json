@@ -1,65 +1,83 @@
 {
-    "editor.fontFamily": "Cascadia Mono NF, JetBrainsMono Nerd Font, Hack Nerd Font, Firacode Nerd Font",
-    "workbench.settings.editor": "json",
-    "workbench.startupEditor": "none",
-    "workbench.colorTheme": "One Dark Pro",
-    "editor.lineHeight": 1.9,
-    "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
-    "editor.renderWhitespace": "none",
-    "files.insertFinalNewline": true,
-    "files.autoSave": "onFocusChange",
-    "files.trimTrailingWhitespace": true,
-    "workbench.tree.indent": 26,
-    "workbench.tree.renderIndentGuides": "always",
-    "explorer.confirmDelete": false,
-    "editor.fontSize": 15,
-    "extensions.ignoreRecommendations": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "emmet.triggerExpansionOnTab": true,
-    "window.titleBarStyle":"native",
-    "apc.electron": {
-      "titleBarStyle": "hidden"
+  "editor.fontFamily": "JetBrainsMono Nerd Font,Cascadia Mono NF,Hack Nerd Font,Firacode Nerd Font",
+  "workbench.settings.editor": "json",
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "editor.lineHeight": 1.9,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.renderWhitespace": "none",
+  "files.insertFinalNewline": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "workbench.tree.indent": 26,
+  "workbench.tree.renderIndentGuides": "always",
+  "explorer.confirmDelete": false,
+  "editor.fontSize": 15,
+  "extensions.ignoreRecommendations": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "emmet.triggerExpansionOnTab": true,
+  "window.titleBarStyle": "native",
+  "apc.electron": {
+    "titleBarStyle": "hidden"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always"
     },
-    "[dart]": {
-      "editor.formatOnSave": true,
-      "editor.formatOnType": true,
-      "editor.rulers": [80],
-      "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit"
-      },
-      "editor.selectionHighlight": false,
-      "editor.suggest.snippetsPreventQuickSuggestions": false,
-      "editor.suggestSelection": "first",
-      "editor.tabCompletion": "onlySnippets",
-      "editor.wordBasedSuggestions": "off"
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "files.associations": {
+    "*.jsx": "javascript"
+  },
+  "[vue]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
     },
-    "files.associations": {
-      "*.jsx": "javascript"
-    },
-    "[vue]": {
-      "editor.formatOnSave": true
-    },
-    "[javascript]": {
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit"
-      },
-      "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[jsx]": {
-      "editor.formatOnSave": true
-    },
-    "[html]": {
-      "editor.formatOnSave": true
-    },
-
-    "go.toolsManagement.autoUpdate": true,
-    "workbench.editorAssociations": {
-      "*.html": "default"
-    },
-    "workbench.editor.empty.hint": "hidden",
-    "window.customTitleBarVisibility": "never",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "github.copilot.editor.enableAutoCompletions": true
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsx]": {
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.editorAssociations": {
+    "*.html": "default"
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "window.customTitleBarVisibility": "never",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": true,
+  "kilo-code.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/var/folders/40/qgtv5xcd0sq4nd_5jtc446bw0000gn/T/postman-http-request-post-response.instructions.md": true,
+    "/var/folders/40/qgtv5xcd0sq4nd_5jtc446bw0000gn/T/postman-http-request-pre-request.instructions.md": true
   }
+}

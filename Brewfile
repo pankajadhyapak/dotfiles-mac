@@ -5,11 +5,10 @@ tap "dart-lang/dart"
 tap "epk/epk"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "leoafarias/fvm"
+tap "nikitabobko/tap"
 tap "stripe/stripe-cli"
 tap "teamookla/speedtest"
 # Codec library for encoding and decoding AV1 video streams
@@ -24,18 +23,22 @@ brew "bpytop"
 brew "ruby"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # Postgres C API library
 brew "libpq", link: true
-# General-purpose scripting language
-brew "php"
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # File comparison utilities
 brew "diffutils"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # OpenType text shaping engine
@@ -64,14 +67,14 @@ brew "gpac"
 brew "grep"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
 # Tool for managing apps on iOS devices
 brew "ideviceinstaller"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Development kit for the Java programming language
-# brew "openjdk"
 # Dex to Java decompiler
 brew "jadx"
 # Lightweight and flexible command-line JSON processor
@@ -84,22 +87,18 @@ brew "lazygit"
 brew "lf"
 # C and C++ client library to the memcached server
 brew "libmemcached"
+# Text-based UI library
+brew "ncurses"
+# Additional guest agents for Lima
+brew "lima-additional-guestagents"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Keep your Mac's application settings in sync
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
-# Development kit for the Java programming language
-# brew "openjdk@11"
-# Reads MySQL binlogs and writes row updates as JSON to Kafka
-brew "maxwell"
-# Replacement for the old crypt package and crypt(1) command
-brew "mcrypt"
 # Open source relational database management system
 brew "mysql-client"
-# Text-based UI library
-brew "ncurses"
 # Parser generator tool and incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -108,8 +107,8 @@ brew "neovim"
 brew "node@20"
 # Development kit for the Java programming language
 brew "openjdk@17"
-# Development kit for the Java programming language
-# brew "openjdk@21"
+# General-purpose scripting language
+brew "php@8.2"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Rsync for cloud storage
@@ -129,7 +128,7 @@ brew "tfenv"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
-brew "trash"
+brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Manage the desktop wallpaper
@@ -152,14 +151,12 @@ brew "zoxide"
 brew "bufbuild/buf/buf"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
-# Simple hotkey-daemon for macOS.
-brew "koekeishiya/formulae/skhd"
-# A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Android SDK component
@@ -192,10 +189,6 @@ cask "imageoptim"
 cask "jetbrains-toolbox"
 # Keyboard customiser
 cask "karabiner-elements"
-# GPU-based terminal emulator
-cask "kitty"
-# Shows the next meeting in the menu bar
-cask "meetingbar"
 # PHP IDE by JetBrains
 cask "phpstorm"
 # Colour picker for colours onscreen
@@ -236,11 +229,12 @@ cask "wezterm"
 cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
+mas "Apple Configurator", id: 1037126344
+mas "AusweisApp", id: 948660805
 mas "HP Smart", id: 1474276998
-mas "Microsoft Outlook", id: 985367838
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Pocket", id: 568494494
+mas "Save to Pocket", id: 1477385213
 mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
@@ -248,6 +242,8 @@ mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
 vscode "chukwuamaka.csvtojson-converter"
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
@@ -263,6 +259,8 @@ vscode "graphql.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
 vscode "kangping.protobuf"
+vscode "kilocode.kilo-code"
+vscode "mathiasfrohlich.kotlin"
 vscode "meezilla.json"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
@@ -276,7 +274,9 @@ vscode "planbcoding.vscode-react-refactor"
 vscode "postman.postman-for-vscode"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
+vscode "swyphcosmo.spellchecker"
 vscode "tamasfe.even-better-toml"
 vscode "thinker.copy-as-snippet"
+vscode "tomoki1207.pdf"
 vscode "weekit.flutter-assets-gen2"
 vscode "zhuangtongfa.material-theme"

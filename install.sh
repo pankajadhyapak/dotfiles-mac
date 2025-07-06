@@ -35,14 +35,13 @@ git config --global core.excludesFile  "$HOME/.gitignore"
 rm -rf "$HOME/Library/Application Support/Code/User/settings.json"
 ln -sf "$DOTFILES/vscode.json" "$HOME/Library/Application Support/Code/User/settings.json"
 
-#kitty
-rm -rf "$XDG_CONFIG_HOME/kitty"
-ln -s "$DOTFILES/kitty" "$XDG_CONFIG_HOME"
+#wezterm
+rm -rf "$XDG_CONFIG_HOME/wezterm"
+ln -s "$DOTFILES/wezterm" "$XDG_CONFIG_HOME"
 
 #alacritty
 rm -rf "$XDG_CONFIG_HOME/alacritty"
 ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
-
 
 # Zsh
 mkdir -p "$XDG_CONFIG_HOME/zsh"
@@ -55,14 +54,9 @@ printf '#!/bin/zsh
 
 source "$ZDOTDIR/zshrc"' > "$XDG_CONFIG_HOME/zsh/.zshrc"
 
-
-#skhd
-rm -rf "$XDG_CONFIG_HOME/skhd"
-ln -s "$DOTFILES/skhd" "$XDG_CONFIG_HOME"
-
-#yabai
-rm -rf "$XDG_CONFIG_HOME/yabai"
-ln -s "$DOTFILES/yabai" "$XDG_CONFIG_HOME"
+#Aersospace
+rm -rf "$XDG_CONFIG_HOME/aerospace"
+ln -s "$DOTFILES/aerospace" "$XDG_CONFIG_HOME"
 
 #karabiner
 rm -rf "$XDG_CONFIG_HOME/karabiner"

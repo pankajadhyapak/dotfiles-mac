@@ -15,12 +15,30 @@
 
 4. ```./install.sh```
 
+5. ```sudo softwareupdate --install-rosetta --agree-to-license```
+
 # Dev deps
 ```./dev.sh```
 
 # Commands
 ```brew bundle dump --describe -f```
 ## Preview
+
+# Docker
+
+```
+# Delete any configuration from previous installs
+rm -rf ~/.docker/config.json
+
+# Set symlink
+sudo ln ~/.config/colima/default/docker.sock /var/run
+
+# Start Colima
+colima start
+
+# Check status
+colima status
+```
 
 
 ![Preview](preview.png)

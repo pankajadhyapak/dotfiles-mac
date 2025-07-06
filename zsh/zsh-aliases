@@ -35,6 +35,7 @@ alias gdel="git branch -D"
 alias branchclean="git branch | grep -v '^*' | xargs git branch -D"
 alias gcm='git checkout master && git pull'
 alias l="lazydocker"
+alias ps="php -S localhost:8811 -t ."
 
 #GO
 alias go-lint="golangci-lint -c .golangci.yml run ./pkg/..."
