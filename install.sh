@@ -73,6 +73,7 @@ chmod -R +x "$DOTFILES/sketchybar"
 
 #colima
 rm -rf "$XDG_CONFIG_HOME/colima/default/colima.yaml"
+mkdir -p "$XDG_CONFIG_HOME/colima/default"
 ln -s "$DOTFILES/colima/colima.yaml" "$XDG_CONFIG_HOME/colima/default/colima.yaml"
 
 touch ${HOME}/.hushlogin

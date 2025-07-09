@@ -1,25 +1,29 @@
 # macOS dotfiles
 
- ### Using
+### Using
+
 - [AeroSpace (for window management)](https://github.com/nikitabobko/AeroSpace)
 - [SketchyBar (top bar)](https://github.com/FelixKratz/SketchyBar)
 - [catppuccin theme](https://github.com/catppuccin/catppuccin)
 
-1. ```xcode-select --install```
+1. `xcode-select --install`
 
-2. ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```
+2. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
-3. ```git clone git@github.com:pankajadhyapak/dotfiles-mac.git .dotfiles```
+3. `git clone git@github.com:pankajadhyapak/dotfiles-mac.git .dotfiles`
 
-4. ```./install.sh```
+4. `./install.sh`
 
-5. ```sudo softwareupdate --install-rosetta --agree-to-license```
+5. `sudo softwareupdate --install-rosetta --agree-to-license`
 
 # Dev deps
-```./dev.sh```
+
+`./dev.sh`
 
 # Commands
-```brew bundle dump --describe -f```
+
+`brew bundle dump --describe -f`
+
 ## Preview
 
 # Docker
@@ -38,5 +42,12 @@ colima start
 colima status
 ```
 
+# Slack Theme
 
-![Preview](preview.png)
+```
+#1E1E2E,#CBA6F7,#00FF2A,#EBA0AC
+```
+
+# Preview
+
+![Preview](preview.jpg)
