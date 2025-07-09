@@ -59,6 +59,7 @@ bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
 #zoxide
+export _ZO_DATA_DIR="$HOME/.zoxide"
 eval "$(zoxide init zsh)"
 
 export ANDROID_HOME="/Users/pankaj/Library/Android/sdk"

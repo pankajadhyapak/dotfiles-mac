@@ -6,7 +6,7 @@ composer g require phpstan/phpstan:@stable --dev
 composer g require friendsofphp/php-cs-fixer:@stable --dev
 
 # terraform
-tfenv install 1.3.7
+tfenv install 1.6.0
 
 # gobrew
 curl -sLk https://raw.githubusercontent.com/kevincobain2000/gobrew/master/git.io.sh | sh

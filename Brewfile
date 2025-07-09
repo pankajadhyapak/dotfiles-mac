@@ -4,8 +4,6 @@ tap "cmacrae/formulae"
 tap "dart-lang/dart"
 tap "epk/epk"
 tap "felixkratz/formulae"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "leoafarias/fvm"
 tap "nikitabobko/tap"
@@ -227,14 +225,12 @@ cask "webstorm"
 cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "Apple Configurator", id: 1037126344
 mas "AusweisApp", id: 948660805
 mas "HP Smart", id: 1474276998
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Save to Pocket", id: 1477385213
 mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
@@ -243,7 +239,6 @@ mas "Xcode", id: 497799835
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
 vscode "catppuccin.catppuccin-vsc"
-vscode "catppuccin.catppuccin-vsc-icons"
 vscode "chukwuamaka.csvtojson-converter"
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
@@ -262,16 +257,12 @@ vscode "kangping.protobuf"
 vscode "kilocode.kilo-code"
 vscode "mathiasfrohlich.kotlin"
 vscode "meezilla.json"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
 vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.sublime-keybindings"
 vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
-vscode "postman.postman-for-vscode"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
 vscode "swyphcosmo.spellchecker"
