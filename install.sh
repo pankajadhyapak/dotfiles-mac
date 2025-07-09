@@ -71,6 +71,10 @@ rm -rf "$XDG_CONFIG_HOME/sketchybar"
 ln -s "$DOTFILES/sketchybar" "$XDG_CONFIG_HOME"
 chmod -R +x "$DOTFILES/sketchybar"
 
+#colima
+rm -rf "$XDG_CONFIG_HOME/colima/default/colima.yaml"
+ln -s "$DOTFILES/colima/colima.yaml" "$XDG_CONFIG_HOME/colima/default/colima.yaml"
+
 touch ${HOME}/.hushlogin
 
 # Copy and set wallpaper
