@@ -10,6 +10,8 @@ after-startup-command = ['exec-and-forget brew services restart sketchybar', 'ex
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # on-focus-changed = "move-mouse window-lazy-center"
 
+automatically-unhide-macos-hidden-apps = false
+
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
@@ -112,35 +114,35 @@ run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.goland'
-run = ['move-node-to-workspace 4']
+run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.PhpStorm'
-run = ['move-node-to-workspace 4']
+run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-id = 'com.google.android.studio'
-run = ['move-node-to-workspace 4']
+run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iphonesimulator'
-run = ['move-node-to-workspace 3']
+run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = ['move-node-to-workspace 7']
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-id = 'com.readdle.smartemail-Mac'
-run = ['move-node-to-workspace 9']
+run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
 if.app-id = 'com.postmanlabs.mac'
-run = ['move-node-to-workspace 5']
+run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyapp.TablePlus'
-run = ['move-node-to-workspace 5']
+run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
@@ -158,9 +160,6 @@ run = 'layout floating'
 if.app-id = 'com.electron.dockerdesktop'
 run = 'layout floating'
 
-# [[on-window-detected]]
-# if.app-id = 'org.gnu.Emacs'
-# run = 'layout floating'
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'                            # Monitor sequence number from left to right. 1-based indexing
@@ -181,3 +180,4 @@ outer.left = 0
 outer.bottom = 0
 outer.top = [{ monitor.'^built-in retina display$' = 0 }, 32]
 outer.right = 0
+

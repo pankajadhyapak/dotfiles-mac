@@ -45,6 +45,8 @@ brew "harfbuzz"
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -65,6 +67,8 @@ brew "gpac"
 brew "grep"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Tool to download photos from iCloud
+brew "icloudpd"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
 # Tool for managing apps on iOS devices
@@ -97,11 +101,11 @@ brew "mackup"
 brew "mas"
 # Open source relational database management system
 brew "mysql-client"
-# Parser generator tool and incremental parsing library
+# Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Platform built on V8 to build network applications
+# Open-source, cross-platform JavaScript runtime environment
 brew "node@20"
 # Development kit for the Java programming language
 brew "openjdk@17"
@@ -115,12 +119,16 @@ brew "rclone"
 brew "redis"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Utility that provides fast incremental file transfer
+brew "rsync"
 # Command-line tool for the Amazon S3 service
 brew "s3cmd"
 # Editor of encrypted files
 brew "sops"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
+# Powerful free data recovery utility
+brew "testdisk"
 # Terraform version manager inspired by rbenv
 brew "tfenv"
 # Terminal multiplexer
@@ -157,6 +165,8 @@ brew "teamookla/speedtest/speedtest"
 cask "aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Transfer files from and to an Android smartphone
+cask "android-file-transfer"
 # Android SDK component
 cask "android-platform-tools"
 # Tools for building Android applications
@@ -209,8 +219,12 @@ cask "quicklook-json"
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Launcher & command palette
+cask "sol"
 # Text editor for code, markup and prose
 cask "sublime-text"
+# Xcode Extension for reformatting Swift code
+cask "swiftformat-for-xcode"
 # Native GUI tool for relational databases
 cask "tableplus"
 # Unpacks archive files
@@ -239,6 +253,7 @@ mas "Xcode", id: 497799835
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
 vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
 vscode "chukwuamaka.csvtojson-converter"
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
@@ -255,19 +270,38 @@ vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
 vscode "kangping.protobuf"
 vscode "kilocode.kilo-code"
+vscode "laravel.vscode-laravel"
+vscode "llvm-vs-code-extensions.lldb-dap"
 vscode "mathiasfrohlich.kotlin"
 vscode "meezilla.json"
 vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.sublime-keybindings"
+vscode "openai.chatgpt"
 vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
+vscode "swiftlang.swift-vscode"
 vscode "swyphcosmo.spellchecker"
 vscode "tamasfe.even-better-toml"
 vscode "thinker.copy-as-snippet"
 vscode "tomoki1207.pdf"
 vscode "weekit.flutter-assets-gen2"
 vscode "zhuangtongfa.material-theme"
+go "github.com/githubnemo/CompileDaemon"
+go "github.com/abice/go-enum"
+go "mvdan.cc/gofumpt"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/golangci/golangci-lint/v2/cmd/golangci-lint"
+go "github.com/segmentio/golines"
+go "golang.org/x/tools/gopls"
+go "github.com/simulot/immich-go"
+go "github.com/knadh/stuffbin/mock"
+go "github.com/vektra/mockery/v2"
+go "google.golang.org/protobuf/cmd/protoc-gen-go"
+go "github.com/twitchtv/twirp/protoc-gen-twirp"
+go "github.com/rubenv/sql-migrate/sql-migrate"
+go "honnef.co/go/tools/cmd/staticcheck"
+go "github.com/knadh/stuffbin/stuffbin"

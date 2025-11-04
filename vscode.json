@@ -2,7 +2,7 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font,Cascadia Mono NF,Hack Nerd Font,Firacode Nerd Font",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "editor.lineHeight": 1.9,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
@@ -67,12 +67,28 @@
   "dart.debugExternalPackageLibraries": true,
   "dart.debugSdkLibraries": true,
   "kilo-code.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show",
+    "go test ./...",
+    "go",
+    "go test",
+    "xcodebuild -scheme libredataview -destination 'platform=iOS Simulator,name=iPhone 14' build",
+    "xcodebuild -scheme libredataview -destination platform=iOS Simulator,name=iPhone 14 build",
+    "xcodebuild",
+    "mkdir",
+    "mv",
+    "cd",
+    "flutter",
+    "cp",
+    "rm",
+    "node",
+    "touch",
+    "npm",
     "npm test",
     "npm install",
     "tsc",
-    "git log",
-    "git diff",
-    "git show"
+    "aerospace config-check"
   ],
   "chat.instructionsFilesLocations": {
     ".github/instructions": true,
@@ -80,5 +96,12 @@
     "/var/folders/40/qgtv5xcd0sq4nd_5jtc446bw0000gn/T/postman-http-request-pre-request.instructions.md": true,
     "/var/folders/nl/_nrdb9_16b3f76zq_1d7gtt40000gn/T/postman-http-request-post-response.instructions.md": true,
     "/var/folders/nl/_nrdb9_16b3f76zq_1d7gtt40000gn/T/postman-http-request-pre-request.instructions.md": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "kilo-code.deniedCommands": [],
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "[php]": {
+    "editor.defaultFormatter": "laravel.vscode-laravel"
   }
 }
