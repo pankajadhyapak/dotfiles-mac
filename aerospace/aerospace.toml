@@ -17,6 +17,9 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
+[key-mapping]
+    preset = 'qwerty'
+
 
 [mode.main.binding]
 ctrl-alt-shift-cmd-enter = 'exec-and-forget open -n -a Alacritty'

@@ -101,8 +101,6 @@ brew "mackup"
 brew "mas"
 # Open source relational database management system
 brew "mysql-client"
-# Incremental parsing library
-brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
@@ -137,6 +135,8 @@ brew "tmux"
 brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Incremental parsing library
+brew "tree-sitter"
 # Manage the desktop wallpaper
 brew "wallpaper"
 # Internet file retriever
@@ -219,6 +219,8 @@ cask "quicklook-json"
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Displays all open files and sockets in use by all running processes
+cask "sloth"
 # Launcher & command palette
 cask "sol"
 # Text editor for code, markup and prose
@@ -242,6 +244,7 @@ cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Apple Configurator", id: 1037126344
 mas "AusweisApp", id: 948660805
+mas "Hot Player", id: 6695762404
 mas "HP Smart", id: 1474276998
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
