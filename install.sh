@@ -79,8 +79,8 @@ ln -s "$DOTFILES/colima/colima.yaml" "$XDG_CONFIG_HOME/colima/default/colima.yam
 touch ${HOME}/.hushlogin
 
 # Copy and set wallpaper
-cp wallpaper.jpeg ~/Pictures
-wallpaper set ~/Pictures/wallpaper.jpeg
+cp wallpaper.png ~/Pictures
+wallpaper set ~/Pictures/wallpaper.png
 
 # Set macOS preferences
 source .macos

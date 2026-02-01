@@ -104,7 +104,7 @@ brew "mysql-client"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
-brew "node@20"
+brew "node@24", link: true
 # Development kit for the Java programming language
 brew "openjdk@17"
 # General-purpose scripting language

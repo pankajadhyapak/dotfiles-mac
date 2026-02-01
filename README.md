@@ -10,7 +10,7 @@
 
 2. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
-3. `git clone git@github.com:pankajadhyapak/dotfiles-mac.git .dotfiles`
+3. `git clone https://github.com/pankajadhyapak/dotfiles-mac.git .dotfiles`
 
 4. `./install.sh`
 
