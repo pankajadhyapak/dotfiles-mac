@@ -112,6 +112,10 @@ if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
+if.app-id = 'com.sublimetext.4'
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = "move-node-to-workspace 3"
 
@@ -124,12 +128,16 @@ if.app-id = 'com.jetbrains.PhpStorm'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
+if.app-id = 'com.jetbrains.goland'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
 if.app-id = 'com.google.android.studio'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iphonesimulator'
-run = ['move-node-to-workspace 4']
+run = ['move-node-to-workspace 4', 'layout tiling']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
@@ -157,6 +165,14 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.AppStore'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.keychainaccess'
 run = 'layout floating'
 
 [[on-window-detected]]

@@ -27,6 +27,10 @@ brew "colima"
 brew "libpq", link: true
 # Dependency Manager for PHP
 brew "composer"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Utility for rendering projects templates
+brew "copier"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # File comparison utilities
@@ -39,14 +43,10 @@ brew "docker-compose"
 brew "docker-credential-helper"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Play, record, convert, and stream audio and video
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -65,6 +65,8 @@ brew "gopls"
 brew "gpac"
 # GNU grep, egrep and fgrep
 brew "grep"
+# OpenType text shaping engine
+brew "harfbuzz"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Tool to download photos from iCloud
@@ -75,7 +77,7 @@ brew "icu4c@76"
 brew "ideviceinstaller"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
-# Tools and libraries to manipulate images in many formats
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Dex to Java decompiler
 brew "jadx"
@@ -99,6 +101,8 @@ brew "lsd"
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
+# Deep clean and optimize your Mac
+brew "mole"
 # Open source relational database management system
 brew "mysql-client"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -109,6 +113,10 @@ brew "node@24", link: true
 brew "openjdk@17"
 # General-purpose scripting language
 brew "php@8.2"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Rsync for cloud storage
@@ -162,7 +170,7 @@ brew "stripe/stripe-cli/stripe"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # AeroSpace is an i3-like tiling window manager for macOS
-cask "aerospace"
+cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Transfer files from and to an Android smartphone
@@ -221,8 +229,6 @@ cask "raycast"
 cask "sf-symbols"
 # Displays all open files and sockets in use by all running processes
 cask "sloth"
-# Launcher & command palette
-cask "sol"
 # Text editor for code, markup and prose
 cask "sublime-text"
 # Xcode Extension for reformatting Swift code
@@ -253,6 +259,7 @@ mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
+vscode "anthropic.claude-code"
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
 vscode "catppuccin.catppuccin-vsc"
@@ -265,9 +272,8 @@ vscode "drcika.apc-extension"
 vscode "eamodio.gitlens"
 vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
-vscode "github.copilot"
-vscode "github.copilot-chat"
 vscode "golang.go"
+vscode "google.gemini-cli-vscode-ide-companion"
 vscode "graphql.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
@@ -303,6 +309,7 @@ go "golang.org/x/tools/gopls"
 go "github.com/simulot/immich-go"
 go "github.com/knadh/stuffbin/mock"
 go "github.com/vektra/mockery/v2"
+go "github.com/DataDog/orchestrion"
 go "google.golang.org/protobuf/cmd/protoc-gen-go"
 go "github.com/twitchtv/twirp/protoc-gen-twirp"
 go "github.com/rubenv/sql-migrate/sql-migrate"

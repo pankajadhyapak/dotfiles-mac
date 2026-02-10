@@ -61,6 +61,8 @@
   "workbench.editorAssociations": {
     "*.html": "default",
   },
+  "search.location": "sidebar",
+
   "workbench.editor.empty.hint": "hidden",
   "window.customTitleBarVisibility": "never",
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -73,8 +75,6 @@
     "go test ./...",
     "go",
     "go test",
-    "xcodebuild -scheme libredataview -destination 'platform=iOS Simulator,name=iPhone 14' build",
-    "xcodebuild -scheme libredataview -destination platform=iOS Simulator,name=iPhone 14 build",
     "xcodebuild",
     "mkdir",
     "mv",
@@ -88,7 +88,6 @@
     "npm test",
     "npm install",
     "tsc",
-    "aerospace config-check",
   ],
   "chat.instructionsFilesLocations": {
     ".github/instructions": true,
@@ -105,4 +104,7 @@
     "editor.defaultFormatter": "laravel.vscode-laravel",
   },
   "kilo-code.debug": false,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "claudeCode.preferredLocation": "panel",
 }

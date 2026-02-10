@@ -7,3 +7,5 @@ karabiner/.config/karabiner/automatic_backups/*
 mackup/*
 karabiner/automatic_backups/*
 Brewfile.lock.json
+.code-intelligence
+.claude
