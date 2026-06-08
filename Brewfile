@@ -1,3 +1,4 @@
+tap "anomalyco/tap"
 tap "blendle/blendle"
 tap "bufbuild/buf"
 tap "cmacrae/formulae"
@@ -11,6 +12,8 @@ tap "stripe/stripe-cli"
 tap "teamookla/speedtest"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -27,8 +30,6 @@ brew "colima"
 brew "libpq", link: true
 # Dependency Manager for PHP
 brew "composer"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
 # Utility for rendering projects templates
 brew "copier"
 # GNU File, Shell, and Text utilities
@@ -36,7 +37,7 @@ brew "coreutils"
 # File comparison utilities
 brew "diffutils"
 # Pack, ship and run any application as a lightweight container
-brew "docker"
+brew "docker", link: false
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
@@ -105,10 +106,12 @@ brew "mas"
 brew "mole"
 # Open source relational database management system
 brew "mysql-client"
+# Incremental parsing library
+brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
-brew "node@24", link: true
+brew "node@24"
 # Development kit for the Java programming language
 brew "openjdk@17"
 # General-purpose scripting language
@@ -143,8 +146,6 @@ brew "tmux"
 brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Incremental parsing library
-brew "tree-sitter"
 # Manage the desktop wallpaper
 brew "wallpaper"
 # Internet file retriever
@@ -153,6 +154,8 @@ brew "wget"
 brew "wimlib"
 # HTTP benchmarking tool
 brew "wrk"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
 # JavaScript package manager
 brew "yarn"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
@@ -161,6 +164,8 @@ brew "yq"
 brew "yt-dlp"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode"
 # The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
 # Custom macOS statusbar with shell plugin, interaction and graph support
@@ -191,6 +196,8 @@ cask "font-cascadia-mono"
 cask "font-cascadia-mono-nf"
 cask "font-hack-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Desktop client for GitHub repositories
 cask "github"
 # Go (golang) IDE
@@ -235,6 +242,8 @@ cask "sublime-text"
 cask "swiftformat-for-xcode"
 # Native GUI tool for relational databases
 cask "tableplus"
+# Native database client for many database types
+cask "tablepro"
 # Unpacks archive files
 cask "the-unarchiver"
 # Open-source code editor
@@ -254,6 +263,7 @@ mas "Hot Player", id: 6695762404
 mas "HP Smart", id: 1474276998
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "S3", id: 6447647340
 mas "Slack", id: 803453959
 mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
@@ -262,6 +272,7 @@ mas "Xcode", id: 497799835
 vscode "anthropic.claude-code"
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
+vscode "bwya77.islands-dark"
 vscode "catppuccin.catppuccin-vsc"
 vscode "catppuccin.catppuccin-vsc-icons"
 vscode "chukwuamaka.csvtojson-converter"
@@ -278,10 +289,10 @@ vscode "graphql.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
 vscode "kangping.protobuf"
-vscode "kilocode.kilo-code"
 vscode "laravel.vscode-laravel"
 vscode "llvm-vs-code-extensions.lldb-dap"
 vscode "mathiasfrohlich.kotlin"
+vscode "mechatroner.rainbow-csv"
 vscode "meezilla.json"
 vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
@@ -292,6 +303,7 @@ vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
+vscode "subframe7536.custom-ui-style"
 vscode "swiftlang.swift-vscode"
 vscode "swyphcosmo.spellchecker"
 vscode "tamasfe.even-better-toml"
@@ -300,12 +312,14 @@ vscode "tomoki1207.pdf"
 vscode "weekit.flutter-assets-gen2"
 vscode "zhuangtongfa.material-theme"
 go "github.com/githubnemo/CompileDaemon"
+go "github.com/vektah/dataloaden"
 go "github.com/abice/go-enum"
 go "mvdan.cc/gofumpt"
 go "golang.org/x/tools/cmd/goimports"
 go "github.com/golangci/golangci-lint/v2/cmd/golangci-lint"
 go "github.com/segmentio/golines"
 go "golang.org/x/tools/gopls"
+go "github.com/99designs/gqlgen"
 go "github.com/simulot/immich-go"
 go "github.com/knadh/stuffbin/mock"
 go "github.com/vektra/mockery/v2"
@@ -315,3 +329,10 @@ go "github.com/twitchtv/twirp/protoc-gen-twirp"
 go "github.com/rubenv/sql-migrate/sql-migrate"
 go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/knadh/stuffbin/stuffbin"
+npm "@google/gemini-cli"
+npm "@googleworkspace/cli"
+npm "@immich/cli"
+npm "firebase-tools"
+npm "flutter-mcp"
+npm "playwright"
+npm "sharp"

@@ -33,3 +33,5 @@ npm-debug.log
 .eslintcache
 observer.rb
 docker-data/*
+
+**/.claude/settings.local.json

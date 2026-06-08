@@ -18,7 +18,14 @@ function dropLine() {
     pattern=${2}
     lineNumber=$(grep -n -m 1 "$pattern" ${file} | cut -d : -f 1)
     if [[ ! -z "$lineNumber" ]]; then
-        sed -i "${lineNumber}d" ${file}
+        # Create a temporary file
+        tmpfile=$(mktemp /tmp/tempfile.XXXXXX)
+
+        # Use sed to delete the line and write the result to the temporary file
+        sed "${lineNumber}d" "${file}" > "${tmpfile}"
+
+        # Move the temporary file back to the original file
+        mv "${tmpfile}" "${file}"
     fi
 }
 

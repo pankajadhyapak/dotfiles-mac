@@ -22,7 +22,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 
 
 [mode.main.binding]
-ctrl-alt-shift-cmd-enter = 'exec-and-forget open -n -a Alacritty'
+ctrl-alt-shift-cmd-enter = 'exec-and-forget open -n -a ghostty'
 alt-tab = 'workspace-back-and-forth'
 alt-shift-q = 'close'
 
