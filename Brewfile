@@ -1,17 +1,22 @@
-tap "anomalyco/tap"
-tap "blendle/blendle"
-tap "bufbuild/buf"
-tap "cmacrae/formulae"
-tap "dart-lang/dart"
-tap "epk/epk"
-tap "felixkratz/formulae"
-tap "koekeishiya/formulae"
-tap "leoafarias/fvm"
-tap "nikitabobko/tap"
-tap "stripe/stripe-cli"
-tap "teamookla/speedtest"
+tap "anomalyco/tap", trusted: true
+tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
+tap "blendle/blendle", trusted: true
+tap "bufbuild/buf", trusted: true
+tap "cmacrae/formulae", trusted: true
+tap "dart-lang/dart", trusted: true
+tap "epk/epk", trusted: true
+tap "felixkratz/formulae", trusted: true
+tap "leoafarias/fvm", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "noopapp/noop", trusted: true
+tap "stripe/stripe-cli", trusted: true
+tap "teamookla/speedtest", trusted: true
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
 # Official Amazon AWS command-line interface
@@ -26,6 +31,8 @@ brew "ruby"
 brew "cocoapods"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
+# TIFF library and utilities
+brew "libtiff"
 # Postgres C API library
 brew "libpq", link: true
 # Dependency Manager for PHP
@@ -37,7 +44,7 @@ brew "coreutils"
 # File comparison utilities
 brew "diffutils"
 # Pack, ship and run any application as a lightweight container
-brew "docker", link: false
+brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
@@ -84,6 +91,8 @@ brew "imagemagick"
 brew "jadx"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Simple terminal UI for git commands
@@ -165,15 +174,15 @@ brew "yt-dlp"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode", trusted: true
 # The best way of working with Protocol Buffers.
-brew "bufbuild/buf/buf"
+brew "bufbuild/buf/buf", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
-brew "felixkratz/formulae/sketchybar"
+brew "felixkratz/formulae/sketchybar", trusted: true
 # Stripe CLI utility
-brew "stripe/stripe-cli/stripe"
+brew "stripe/stripe-cli/stripe", trusted: true
 # Ookla Speedtest
-brew "teamookla/speedtest/speedtest"
+brew "teamookla/speedtest/speedtest", trusted: true
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
@@ -212,6 +221,8 @@ cask "imageoptim"
 cask "jetbrains-toolbox"
 # Keyboard customiser
 cask "karabiner-elements"
+# Standalone, fully offline companion app for WHOOP straps
+cask "noopapp/noop/noop"
 # PHP IDE by JetBrains
 cask "phpstorm"
 # Colour picker for colours onscreen
@@ -240,8 +251,6 @@ cask "sloth"
 cask "sublime-text"
 # Xcode Extension for reformatting Swift code
 cask "swiftformat-for-xcode"
-# Native GUI tool for relational databases
-cask "tableplus"
 # Native database client for many database types
 cask "tablepro"
 # Unpacks archive files
@@ -299,6 +308,7 @@ vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.sublime-keybindings"
 vscode "openai.chatgpt"
+vscode "philstainer.git-worktree"
 vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
 vscode "robert-brunhage.flutter-riverpod-snippets"
@@ -336,3 +346,4 @@ npm "firebase-tools"
 npm "flutter-mcp"
 npm "playwright"
 npm "sharp"
+npm "wrangler"

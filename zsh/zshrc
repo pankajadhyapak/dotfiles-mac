@@ -22,12 +22,23 @@ autoload -Uz colors && colors
 # HISTORY
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
+export SAVEHIST=1000000000
 export HISTTIMEFORMAT="[%F %T] "
-setopt EXTENDED_HISTORY
+
+# History behavior
+setopt EXTENDED_HISTORY        # Store timestamps and duration
+setopt APPEND_HISTORY          # Append instead of overwriting
+setopt INC_APPEND_HISTORY      # Write commands immediately
+setopt SHARE_HISTORY           # Share history across all zsh sessions
+
+# History cleanup
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
-setopt SHARE_HISTORY             # Share history between all sessions.
-setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
+setopt HIST_IGNORE_SPACE       # Commands starting with a space aren't saved
+setopt HIST_REDUCE_BLANKS      # Remove extra whitespace
+
+# History expansion
+setopt HIST_VERIFY             # Review history expansions before executing
 
 # search history
 autoload -U up-line-or-beginning-search

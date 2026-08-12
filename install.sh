@@ -54,6 +54,10 @@ printf '#!/bin/zsh
 
 source "$ZDOTDIR/zshrc"' > "$XDG_CONFIG_HOME/zsh/.zshrc"
 
+#Atuin
+rm -rf "$XDG_CONFIG_HOME/atuin"
+ln -s "$DOTFILES/atuin/config.toml" "$XDG_CONFIG_HOME/atuin/config.toml"
+
 #Aersospace
 rm -rf "$XDG_CONFIG_HOME/aerospace"
 ln -s "$DOTFILES/aerospace" "$XDG_CONFIG_HOME"
