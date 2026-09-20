@@ -9,7 +9,7 @@ composer g require friendsofphp/php-cs-fixer:@stable --dev
 tfenv install 1.6.0
 
 # gobrew
-curl -sLk https://raw.githubusercontent.com/kevincobain2000/gobrew/master/git.io.sh | sh
+curl -sL https://raw.githubusercontent.com/kevincobain2000/gobrew/master/git.io.sh | sh
 gobrew use latest
 
 # install global go deps

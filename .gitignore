@@ -1,11 +1,8 @@
 
 .DS_Store
-composer/.composer/vendor
-composer/.composer/.htaccess
-composer/.composer/composer.lock
-karabiner/.config/karabiner/automatic_backups/*
-mackup/*
 karabiner/automatic_backups/*
 Brewfile.lock.json
 .code-intelligence
 .claude
+tmux/plugins/
+sketchybar/plugins/data.sh

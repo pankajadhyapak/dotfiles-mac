@@ -22,10 +22,10 @@
   },
   "window.titleBarStyle": "native",
   "window.customTitleBarVisibility": "never",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "always",
-  },
+  // "editor.formatOnSave": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll": "always",
+  // },
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
@@ -72,7 +72,5 @@
   "[php]": {
     "editor.defaultFormatter": "laravel.vscode-laravel",
   },
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "claudeCode.preferredLocation": "panel",
 }

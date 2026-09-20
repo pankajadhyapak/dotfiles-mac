@@ -12,7 +12,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
-after-startup-command = ['exec-and-forget brew services restart sketchybar', 'exec-and-forget switch_mode main']
+after-startup-command = ['exec-and-forget brew services restart sketchybar']
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # on-focus-changed = "move-mouse window-lazy-center"
@@ -51,10 +51,13 @@ alt-shift-l = 'move right'
 alt-f = 'fullscreen'
 alt-shift-f = 'close-all-windows-but-current'
 
-ctrl-alt-shift-cmd-a = 'layout v_accordion h_accordion'
-alt-s = 'layout v_accordion' # 'layout stacking' in i3
-alt-t = 'layout h_accordion' # 'layout tabbed' in i3
-alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+# ctrl-alt-shift-cmd-a = 'layout v_accordion h_accordion'
+# alt-s = 'layout v_accordion' # 'layout stacking' in i3
+# alt-t = 'layout h_accordion' # 'layout tabbed' in i3
+# alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
 alt-shift-space = 'layout floating tiling'
 cmd-1 = 'workspace 1'
@@ -135,10 +138,6 @@ if.app-id = 'com.jetbrains.PhpStorm'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
-if.app-id = 'com.jetbrains.goland'
-run = 'move-node-to-workspace 4'
-
-[[on-window-detected]]
 if.app-id = 'com.google.android.studio'
 run = 'move-node-to-workspace 4'
 
@@ -163,6 +162,10 @@ if.app-id = 'com.tinyapp.TablePlus'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
@@ -172,6 +175,10 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.AppStore'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.tinycast.app'
 run = 'layout floating'
 
 [[on-window-detected]]

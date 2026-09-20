@@ -24,16 +24,11 @@
 
 `brew bundle dump --describe -f`
 
-## Preview
-
 # Docker
 
 ```
 # Delete any configuration from previous installs
 rm -rf ~/.docker/config.json
-
-# Set symlink
-sudo ln ~/.config/colima/default/docker.sock /var/run
 
 # Start Colima
 colima start

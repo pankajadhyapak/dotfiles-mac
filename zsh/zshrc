@@ -4,7 +4,6 @@ setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
 stty stop undef		# Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 # beeping is annoying
 unsetopt BEEP
@@ -20,16 +19,15 @@ _comp_options+=(globdots)		# Include hidden files.
 autoload -Uz colors && colors
 
 # HISTORY
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
-export SAVEHIST=1000000000
-export HISTTIMEFORMAT="[%F %T] "
+# set here, not in .zshenv: macOS /etc/zshrc resets HISTFILE after .zshenv runs
+HISTFILE="$ZDOTDIR/.zsh_history"
+HISTSIZE=1000000000
+SAVEHIST=1000000000
 
 # History behavior
 setopt EXTENDED_HISTORY        # Store timestamps and duration
 setopt APPEND_HISTORY          # Append instead of overwriting
-setopt INC_APPEND_HISTORY      # Write commands immediately
-setopt SHARE_HISTORY           # Share history across all zsh sessions
+setopt SHARE_HISTORY           # Share history across all zsh sessions (implies writing immediately)
 
 # History cleanup
 setopt HIST_FIND_NO_DUPS
@@ -73,12 +71,12 @@ bindkey '^[[B' down-line-or-beginning-search
 export _ZO_DATA_DIR="$HOME/.zoxide"
 eval "$(zoxide init zsh)"
 
-export ANDROID_HOME="/Users/pankaj/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 #PATHS
+typeset -U path # drop duplicate entries
 export PATH="$HOME/go/bin:$HOME/.local/bin:$HOME/.local/bin/scripts:$HOME/.local/bin/scripts/statusbar:$PATH"
 export PATH="$XDG_CONFIG_HOME/composer/vendor/bin:$PATH"
-export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.pub-cache/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -87,6 +85,26 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
 export PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
 export GOROOT="$HOME/.gobrew/current/go"
+export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
+
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+# uv
+[ -f "$XDG_CONFIG_HOME/local/bin/env" ] && . "$XDG_CONFIG_HOME/local/bin/env"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+#docker (colima)
+export DOCKER_HOST="unix://${HOME}/.config/colima/default/docker.sock"
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+
+eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
+
+# Machine-specific and secret settings, not in the repo (chmod 600)
+[ -f "$ZDOTDIR/local.zsh" ] && source "$ZDOTDIR/local.zsh"

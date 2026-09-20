@@ -5,16 +5,21 @@
 # focused application in the $INFO variable:
 # https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
 
-WINDOW_TITLE=$(aerospace list-windows --focused | awk -F\| '{ print $3 }' | tr -d ' ')
-APP_NAME=$INFO
-if [[ $WINDOW_TITLE = "" ]]; then
-  WINDOW_TITLE=$INFO
+# $INFO is only exported by front_app_switched, so fall back on load/reload
+APP_NAME=${INFO:-$(aerospace list-windows --focused --format "%{app-name}")}
+# Ask aerospace for the field directly: splitting its table on "|" broke on
+# titles that contain a pipe, and the tr that trimmed the column padding also
+# stripped every space inside the title.
+WINDOW_TITLE=$(aerospace list-windows --focused --format "%{window-title}")
+
+if [ -z "$WINDOW_TITLE" ] || [ "$WINDOW_TITLE" = "$APP_NAME" ]; then
+  LABEL="$APP_NAME"
+else
+  LABEL="$APP_NAME | $WINDOW_TITLE"
 fi
 
-if [[ ${#WINDOW_TITLE} -gt 80 ]]; then
-  WINDOW_TITLE=$(echo "$WINDOW_TITLE" | cut -c 1-80)
-  sketchybar --set $NAME label="$APP_NAME | $WINDOW_TITLE"… icon.drawing=off
-  exit 0
+if [ ${#LABEL} -gt 80 ]; then
+  LABEL="$(echo "$LABEL" | cut -c 1-80)…"
 fi
 
-sketchybar --set $NAME label="$APP_NAME | $WINDOW_TITLE" icon.drawing=off
+sketchybar --set "$NAME" label="$LABEL" icon.drawing=off

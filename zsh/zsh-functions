@@ -9,23 +9,7 @@ function zsh_add_plugin() {
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     else
-        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
-    fi
-}
-
-function dropLine() {
-    file=${1}
-    pattern=${2}
-    lineNumber=$(grep -n -m 1 "$pattern" ${file} | cut -d : -f 1)
-    if [[ ! -z "$lineNumber" ]]; then
-        # Create a temporary file
-        tmpfile=$(mktemp /tmp/tempfile.XXXXXX)
-
-        # Use sed to delete the line and write the result to the temporary file
-        sed "${lineNumber}d" "${file}" > "${tmpfile}"
-
-        # Move the temporary file back to the original file
-        mv "${tmpfile}" "${file}"
+        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME" && zsh_add_plugin "$1"
     fi
 }
 
@@ -45,54 +29,18 @@ function mkd() {
 
 
 function weather() {
-   city="$1"
-
-   if [ -z "$city" ]; then
-      city="berlin"
-   fi
-
-   eval "curl http://wttr.in/${city}"
+   curl "https://wttr.in/${1:-berlin}"
 }
 
 
 #  Commit everything
 function gc() {
-  commitMessage="$1"
-
-  if [ "$commitMessage" = "" ]; then
-     commitMessage="wip"
-  fi
-
-  git add .
-  eval "git commit -a -m '${commitMessage}'"
-}
-
-function toggle_layout() {
-  CURRENT_LAYOUT=$(yabai -m query --spaces --space | jq '.type')
-  if [ $CURRENT_LAYOUT = '"stack"' ]; then
-    yabai -m space --layout bsp
-  else
-    yabai -m space --layout stack
-  fi
+  git add -A && git commit -m "${1:-wip}"
 }
 
 function rwm(){
   killall AeroSpace && open -a AeroSpace
 }
-
-function ns(){
-  fileName="$HOME/Dropbox/arch_linux/org/$(date +'%d_%m_%Y_%A').org"
-  nvim $fileName
-}
-
-
-function ms(){
-  yabai -m window --toggle float --grid 4:4:1:1:2:2
-  yabai -m window --toggle sticky
-  yabai -m window --toggle topmost
-  ns
-}
-
 
 # t - smart tmux session manager
 #
