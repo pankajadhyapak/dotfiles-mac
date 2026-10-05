@@ -31,7 +31,7 @@ keybind = alt+8=text:\x028
 keybind = alt+9=text:\x029
 
 # clear + redraw
-keybind = cmd+r=clear_screen
+keybind = cmd+r=text:\x0c
 keybind = cmd+shift+r=text:\x1b[A
 
 # reload tmux config
@@ -62,5 +62,3 @@ keybind = cmd+z=text:\x02z
 keybind = cmd+f=text:of
 keybind = cmd+d=text:l
 
-
-keybind = cmd+r=text:\x0c
