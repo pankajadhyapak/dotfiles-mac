@@ -1,5 +1,4 @@
 tap "anomalyco/tap", trusted: true
-tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "blendle/blendle", trusted: true
 tap "bufbuild/buf", trusted: true
 tap "cmacrae/formulae", trusted: true
