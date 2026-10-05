@@ -4,6 +4,7 @@
 
 - [AeroSpace (for window management)](https://github.com/nikitabobko/AeroSpace)
 - [SketchyBar (top bar)](https://github.com/FelixKratz/SketchyBar)
+- [Ghostty (terminal)](https://ghostty.org)
 - [catppuccin theme](https://github.com/catppuccin/catppuccin)
 
 1. `xcode-select --install`

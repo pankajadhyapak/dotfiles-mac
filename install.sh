@@ -32,6 +32,10 @@ brew bundle
 ln -sf "$DOTFILES/git/gitignore" "$HOME/.gitignore"
 [ -f "$HOME/.gitconfig" ] || cp "$DOTFILES/git/gitconfig" "$HOME/.gitconfig"
 
+#ghostty
+rm -rf "$XDG_CONFIG_HOME/ghostty"
+ln -s "$DOTFILES/ghostty" "$XDG_CONFIG_HOME"
+
 #Vscode
 rm -rf "$HOME/Library/Application Support/Code/User/settings.json"
 ln -sf "$DOTFILES/vscode.json" "$HOME/Library/Application Support/Code/User/settings.json"
