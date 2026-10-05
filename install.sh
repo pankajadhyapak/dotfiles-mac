@@ -36,14 +36,6 @@ ln -sf "$DOTFILES/git/gitignore" "$HOME/.gitignore"
 rm -rf "$HOME/Library/Application Support/Code/User/settings.json"
 ln -sf "$DOTFILES/vscode.json" "$HOME/Library/Application Support/Code/User/settings.json"
 
-#wezterm
-rm -rf "$XDG_CONFIG_HOME/wezterm"
-ln -s "$DOTFILES/wezterm" "$XDG_CONFIG_HOME"
-
-#alacritty
-rm -rf "$XDG_CONFIG_HOME/alacritty"
-ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
-
 # Zsh
 mkdir -p "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"

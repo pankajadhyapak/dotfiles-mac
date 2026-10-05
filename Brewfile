@@ -185,7 +185,6 @@ brew "teamookla/speedtest/speedtest", trusted: true
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
-cask "alacritty"
 # Transfer files from and to an Android smartphone
 cask "android-file-transfer"
 # Android SDK component
@@ -261,7 +260,6 @@ cask "vlc"
 # JavaScript IDE
 cask "webstorm"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
-cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
