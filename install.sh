@@ -65,12 +65,6 @@ ln -s "$DOTFILES/karabiner" "$XDG_CONFIG_HOME"
 #tmux
 rm -rf "$XDG_CONFIG_HOME/tmux"
 ln -s "$DOTFILES/tmux" "$XDG_CONFIG_HOME"
-TPM="$XDG_CONFIG_HOME/tmux/plugins/tpm"
-[ -d "$TPM" ] || git clone https://github.com/tmux-plugins/tpm "$TPM"
-# install_plugins needs a server that has loaded the config
-tmux new-session -d -s tpm-install \; source-file "$XDG_CONFIG_HOME/tmux/tmux.conf"
-"$TPM/bin/install_plugins"
-tmux kill-session -t tpm-install
 
 #sketchybar
 rm -rf "$XDG_CONFIG_HOME/sketchybar"

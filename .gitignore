@@ -4,5 +4,4 @@ karabiner/automatic_backups/*
 Brewfile.lock.json
 .code-intelligence
 .claude
-tmux/plugins/
 sketchybar/plugins/data.sh

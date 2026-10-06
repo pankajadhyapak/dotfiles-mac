@@ -21,7 +21,7 @@ git clone https://github.com/pankajadhyapak/dotfiles-mac.git ~/.dotfiles
 ~/.dotfiles/install.sh
 ```
 
-`install.sh` installs Homebrew if it's missing, runs `brew bundle`, links every config below, installs the tmux plugins,
+`install.sh` installs Homebrew if it's missing, runs `brew bundle`, links every config below,
 sets the wallpaper and applies the macOS defaults in `.macos`. It is safe to re-run.
 
 Dev dependencies (PHP tools, Terraform, Go via gobrew): `./dev.sh`
@@ -33,7 +33,7 @@ Dev dependencies (PHP tools, Terraform, Go via gobrew): `./dev.sh`
 | `zsh/zshrc`, `zsh-aliases`, `zsh-functions`, `zsh-prompt` | `~/.config/zsh/` (`zshrc` → `.zshrc`) |
 | `zsh/.zshenv` | `~/.zshenv` |
 | `ghostty/` | `~/.config/ghostty` |
-| `tmux/` | `~/.config/tmux` (plugins in `tmux/plugins/`, git-ignored) |
+| `tmux/` | `~/.config/tmux` |
 | `aerospace/` | `~/.config/aerospace` |
 | `sketchybar/` | `~/.config/sketchybar` |
 | `karabiner/` | `~/.config/karabiner` |
