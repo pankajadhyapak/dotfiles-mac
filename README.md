@@ -48,12 +48,8 @@ Dev dependencies (PHP tools, Terraform, Go via gobrew): `./dev.sh`
 Anything that belongs to one machine — work aliases, project variables, API keys — goes in
 `~/.config/zsh/local.zsh`. It's sourced last by `zshrc`, created with `chmod 600`, and never committed.
 
-Prefer reading secrets from Keychain over exporting them:
-
-```sh
-security add-generic-password -a "$USER" -s my-api-key -w   # prompts for the value
-security find-generic-password -a "$USER" -s my-api-key -w  # prints it
-```
+Export secrets there and nowhere else. Tools that need one, including MCP servers, should
+reference the variable (`"$JIRA_API_TOKEN"`, `"${GEMINI_API_KEY}"`) rather than hold a copy of the value.
 
 Two files are deliberately not tracked: `local.zsh` and `sketchybar/plugins/data.sh`
 (the `data` bar item stays blank without it).
