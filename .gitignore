@@ -1,6 +1,5 @@
 
 .DS_Store
-karabiner/automatic_backups/*
 Brewfile.lock.json
 .code-intelligence
 .claude

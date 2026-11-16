@@ -36,7 +36,6 @@ Dev dependencies (PHP tools, Terraform, Go via gobrew): `./dev.sh`
 | `tmux/` | `~/.config/tmux` |
 | `aerospace/` | `~/.config/aerospace` |
 | `sketchybar/` | `~/.config/sketchybar` |
-| `karabiner/` | `~/.config/karabiner` |
 | `atuin/config.toml` | `~/.config/atuin/config.toml` |
 | `colima/colima.yaml` | `~/.config/colima/default/colima.yaml` |
 | `git/gitignore` | `~/.gitignore` |

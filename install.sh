@@ -58,10 +58,6 @@ ln -sf "$DOTFILES/atuin/config.toml" "$XDG_CONFIG_HOME/atuin/config.toml"
 rm -rf "$XDG_CONFIG_HOME/aerospace"
 ln -s "$DOTFILES/aerospace" "$XDG_CONFIG_HOME"
 
-#karabiner
-rm -rf "$XDG_CONFIG_HOME/karabiner"
-ln -s "$DOTFILES/karabiner" "$XDG_CONFIG_HOME"
-
 #tmux
 rm -rf "$XDG_CONFIG_HOME/tmux"
 ln -s "$DOTFILES/tmux" "$XDG_CONFIG_HOME"

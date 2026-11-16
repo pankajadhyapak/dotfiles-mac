@@ -1,13 +1,10 @@
+tap "abue-ammar/tinycast", trusted: true
 tap "anomalyco/tap", trusted: true
-tap "blendle/blendle", trusted: true
 tap "bufbuild/buf", trusted: true
-tap "cmacrae/formulae", trusted: true
-tap "dart-lang/dart", trusted: true
-tap "epk/epk", trusted: true
+tap "cristipufu/tap"
 tap "felixkratz/formulae", trusted: true
-tap "leoafarias/fvm", trusted: true
 tap "nikitabobko/tap", trusted: true
-tap "noopapp/noop", trusted: true
+tap "simion/tap"
 tap "stripe/stripe-cli", trusted: true
 tap "teamookla/speedtest", trusted: true
 # Static checker for GitHub Actions workflow files
@@ -16,14 +13,14 @@ brew "actionlint"
 brew "aom"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Linux/OSX/FreeBSD resource monitor
 brew "bpytop"
+# Tool for emulating mouse and keyboard events
+brew "cliclick"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Dependency manager for Cocoa projects
@@ -48,6 +45,10 @@ brew "docker"
 brew "docker-compose"
 # Platform keystore credential helper for Docker
 brew "docker-credential-helper"
+# Program that can automate interactive applications
+brew "expect"
+# Efficient Duplicate File Finder
+brew "fclones"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
@@ -74,12 +75,10 @@ brew "gpac"
 brew "grep"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
-# Tool to download photos from iCloud
-brew "icloudpd"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
 # Tool for managing apps on iOS devices
 brew "ideviceinstaller"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
@@ -106,6 +105,8 @@ brew "ncurses"
 brew "lima-additional-guestagents"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 # Keep your Mac's application settings in sync
 brew "mackup"
 # Mac App Store command-line interface
@@ -120,6 +121,10 @@ brew "tree-sitter"
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node@24"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Development kit for the Java programming language
 brew "openjdk@17"
 # General-purpose scripting language
@@ -134,8 +139,6 @@ brew "protobuf"
 brew "rclone"
 # Persistent key-value database, with built-in net interface
 brew "redis"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # Utility that provides fast incremental file transfer
 brew "rsync"
 # Command-line tool for the Amazon S3 service
@@ -170,10 +173,12 @@ brew "yarn"
 brew "yq"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", link: false, trusted: true
 # The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
@@ -184,7 +189,6 @@ brew "stripe/stripe-cli/stripe", trusted: true
 brew "teamookla/speedtest/speedtest", trusted: true
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
-# GPU-accelerated terminal emulator
 # Transfer files from and to an Android smartphone
 cask "android-file-transfer"
 # Android SDK component
@@ -193,8 +197,12 @@ cask "android-platform-tools"
 cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Server and cloud storage browser
 cask "cyberduck"
+# Data recovery software
+cask "disk-drill"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # UI toolkit for building applications for mobile, web and desktop
@@ -203,6 +211,7 @@ cask "font-cascadia-mono"
 cask "font-cascadia-mono-nf"
 cask "font-hack-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-maple-mono-nf"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories
@@ -213,59 +222,53 @@ cask "goland"
 cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
+# Speech to text application
+cask "handy"
+# Homebrew's official GUI
+cask "homebrew-app"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Keyboard customiser
 cask "karabiner-elements"
-# Standalone, fully offline companion app for WHOOP straps
-cask "noopapp/noop/noop"
 # PHP IDE by JetBrains
 cask "phpstorm"
-# Colour picker for colours onscreen
-cask "pika"
 # Collaboration platform for API development
 cask "postman"
-# Quick Look plug-in that renders source code with syntax highlighting
-cask "qlcolorcode"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
-# Quick Look plugin to view patch files
-cask "qlprettypatch"
-# Quick Look plugin for plaintext files without an extension
-cask "qlstephen"
-# Quick Look plugin for CSV files
-cask "quicklook-csv"
-# Quick Look plugin for JSON files
-cask "quicklook-json"
-# Control your tools with a few keystrokes
-cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 # Displays all open files and sockets in use by all running processes
 cask "sloth"
-# Text editor for code, markup and prose
-cask "sublime-text"
+# Native file manager with instant search, disk usage and dual panes
+cask "cristipufu/tap/strata", trusted: true
 # Xcode Extension for reformatting Swift code
 cask "swiftformat-for-xcode"
+# Minimal GUI for AI code agents
+cask "t3-code@nightly"
 # Native database client for many database types
 cask "tablepro"
+# Run claude, gemini, and codex in parallel git worktrees
+cask "simion/tap/termic", trusted: true
 # Unpacks archive files
 cask "the-unarchiver"
+# Application launcher and productivity tool
+cask "tinycast"
+# Google Chromium, sans integration with Google
+cask "ungoogled-chromium"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
 # JavaScript IDE
 cask "webstorm"
-# GPU-accelerated cross-platform terminal emulator and multiplexer
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Apple Configurator", id: 1037126344
 mas "AusweisApp", id: 948660805
-mas "Hot Player", id: 6695762404
 mas "HP Smart", id: 1474276998
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -275,22 +278,16 @@ mas "SmartDNSProxy", id: 1471096079
 mas "Spark", id: 1176895641
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
-vscode "anthropic.claude-code"
 vscode "bradlc.vscode-tailwindcss"
 vscode "burkeholland.simple-react-snippets"
-vscode "bwya77.islands-dark"
-vscode "catppuccin.catppuccin-vsc"
 vscode "catppuccin.catppuccin-vsc-icons"
 vscode "chukwuamaka.csvtojson-converter"
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
 vscode "dbaeumer.vscode-eslint"
-vscode "drcika.apc-extension"
-vscode "eamodio.gitlens"
 vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
 vscode "golang.go"
-vscode "google.gemini-cli-vscode-ide-companion"
 vscode "graphql.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "janisdd.vscode-edit-csv"
@@ -304,13 +301,10 @@ vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.sublime-keybindings"
-vscode "openai.chatgpt"
 vscode "philstainer.git-worktree"
-vscode "pkief.material-icon-theme"
 vscode "planbcoding.vscode-react-refactor"
 vscode "robert-brunhage.flutter-riverpod-snippets"
 vscode "samuelcharpentier.remove-non-ascii-chars"
-vscode "subframe7536.custom-ui-style"
 vscode "swiftlang.swift-vscode"
 vscode "swyphcosmo.spellchecker"
 vscode "tamasfe.even-better-toml"
@@ -336,9 +330,12 @@ go "github.com/twitchtv/twirp/protoc-gen-twirp"
 go "github.com/rubenv/sql-migrate/sql-migrate"
 go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/knadh/stuffbin/stuffbin"
+npm "@bytebase/dbhub"
 npm "@google/gemini-cli"
 npm "@googleworkspace/cli"
+npm "@houtini/gemini-mcp"
 npm "@immich/cli"
+npm "cloudsql-read"
 npm "firebase-tools"
 npm "flutter-mcp"
 npm "playwright"

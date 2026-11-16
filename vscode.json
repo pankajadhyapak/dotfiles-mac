@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "JetBrainsMono Nerd Font,Cascadia Mono NF,Hack Nerd Font,Firacode Nerd Font",
+  "editor.fontFamily": "Ioskeley Mono, Maple Mono NF,JetBrainsMono Nerd Font,Cascadia Mono NF,Hack Nerd Font,Firacode Nerd Font",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "One Dark Pro Night Flat",
@@ -17,9 +17,7 @@
   "extensions.ignoreRecommendations": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "emmet.triggerExpansionOnTab": true,
-  "apc.electron": {
-    "titleBarStyle": "hidden",
-  },
+  "chat.disableAIFeatures": true,
   "window.titleBarStyle": "native",
   "window.customTitleBarVisibility": "never",
   // "editor.formatOnSave": true,
@@ -62,7 +60,6 @@
   "workbench.editorAssociations": {
     "*.html": "default",
   },
-  "search.location": "sidebar",
   "workbench.editor.empty.hint": "hidden",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "dart.debugExternalPackageLibraries": true,
@@ -72,5 +69,4 @@
   "[php]": {
     "editor.defaultFormatter": "laravel.vscode-laravel",
   },
-  "claudeCode.preferredLocation": "panel",
 }

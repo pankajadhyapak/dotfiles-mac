@@ -22,6 +22,14 @@ function gb() {
   git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout
 }
 
+# Pick a git worktree and cd into it
+function wt() {
+  git rev-parse --git-dir >/dev/null 2>&1 || { echo "wt: not a git repository" >&2; return 1; }
+  local dir
+  dir=$(git worktree list | grep -v ' prunable$' | fzf --header "Switch Worktree" --preview "git -C {1} log --oneline --color=always -10" | awk '{print $1}')
+  [ -n "$dir" ] && cd "$dir"
+}
+
 # Create a new directory and enter it
 function mkd() {
    mkdir -p "$@" && cd "$@"
