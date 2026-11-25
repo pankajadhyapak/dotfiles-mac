@@ -2,6 +2,7 @@ tap "abue-ammar/tinycast", trusted: true
 tap "anomalyco/tap", trusted: true
 tap "bufbuild/buf", trusted: true
 tap "cristipufu/tap"
+tap "crmne/tap"
 tap "felixkratz/formulae", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "simion/tap"
@@ -105,8 +106,6 @@ brew "ncurses"
 brew "lima-additional-guestagents"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
 # Keep your Mac's application settings in sync
 brew "mackup"
 # Mac App Store command-line interface
@@ -135,6 +134,8 @@ brew "pkgconf"
 brew "poppler"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 # Rsync for cloud storage
 brew "rclone"
 # Persistent key-value database, with built-in net interface
@@ -210,6 +211,7 @@ cask "flutter"
 cask "font-cascadia-mono"
 cask "font-cascadia-mono-nf"
 cask "font-hack-nerd-font"
+cask "font-ioskeley-mono"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-maple-mono-nf"
 # Terminal emulator that uses platform-native UI and GPU acceleration
@@ -232,6 +234,8 @@ cask "imageoptim"
 cask "jetbrains-toolbox"
 # Keyboard customiser
 cask "karabiner-elements"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # PHP IDE by JetBrains
 cask "phpstorm"
 # Collaboration platform for API development
@@ -250,8 +254,6 @@ cask "swiftformat-for-xcode"
 cask "t3-code@nightly"
 # Native database client for many database types
 cask "tablepro"
-# Run claude, gemini, and codex in parallel git worktrees
-cask "simion/tap/termic", trusted: true
 # Unpacks archive files
 cask "the-unarchiver"
 # Application launcher and productivity tool
@@ -264,6 +266,8 @@ cask "visual-studio-code"
 cask "vlc"
 # JavaScript IDE
 cask "webstorm"
+# Native WhatsApp client
+cask "crmne/tap/zapfast", trusted: true
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
