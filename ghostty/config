@@ -1,0 +1,63 @@
+shell-integration-features = sudo
+
+theme = Catppuccin Mocha
+font-family = "Ioskeley Mono, JetBrainsMono Nerd Font Mono"
+font-thicken = true
+font-feature = -liga
+font-size = 15
+
+
+# Window
+adjust-cell-height = 18
+macos-titlebar-style = hidden
+background-opacity = 0.99
+
+# Scrollback
+scrollback-limit = 10000
+
+# tmux prefix helpers
+keybind = cmd+,=text:\x02,
+keybind = cmd+k=text:\x02s
+
+# window selection
+keybind = alt+1=text:\x021
+keybind = alt+2=text:\x022
+keybind = alt+3=text:\x023
+keybind = alt+4=text:\x024
+keybind = alt+5=text:\x025
+keybind = alt+6=text:\x026
+keybind = alt+7=text:\x027
+keybind = alt+8=text:\x028
+keybind = alt+9=text:\x029
+
+# clear + redraw
+keybind = cmd+r=text:\x0c
+keybind = cmd+shift+r=text:\x1b[A
+
+# save in vim (ESC :w)
+keybind = cmd+s=text:\x1b:w
+
+# panes
+keybind = cmd+shift+n=text:\x02\"
+keybind = cmd+n=text:\x02%
+
+# close pane
+keybind = cmd+shift+x=text:\x02d
+keybind = cmd+x=text:\x02x
+
+# pane navigation
+keybind = cmd+l=text:\x02L
+keybind = cmd+[=text:\x02[
+keybind = cmd+shift+[=text:\x02p
+keybind = cmd+shift+]=text:\x02n
+
+# sessions
+keybind = cmd+t=text:\x02c
+keybind = cmd+shift+t=text:\x02!
+
+# zoom
+keybind = cmd+z=text:\x02z
+
+# file manager / scripts
+keybind = cmd+f=text:of
+keybind = cmd+d=text:l

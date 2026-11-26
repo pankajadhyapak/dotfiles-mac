@@ -9,9 +9,6 @@ BAR_PROPS=(
   padding_left=10
   padding_right=10
   color=0x11000000
-  --add event window_focus
-  --add event title_change
-  --add event windows_on_spaces
 )
 sketchybar --bar "${BAR_PROPS[@]}"
 
@@ -32,39 +29,45 @@ sketchybar --default "${DEF_PROPS[@]}"
 sketchybar --add item apple.logo left \
            --set apple.logo icon=􀣺  icon.font="JetBrainsMono Nerd Font:Black:16.0"
 
-sketchybar --add event aerospace_workspace_change
+# tagwm: tags, layout symbol and focused app (from tagwm's sketchybar/tagwmrc example).
+TAGWM="$(command -v tagwm || echo "$HOME/.local/bin/tagwm")"
+TAGWM_PLUGINS="$PLUGIN_DIR"
 
-for m in $(aerospace list-monitors | awk '{print $1}')
-do
-    for i in $(aerospace list-workspaces --monitor $m)
-    do
-        sid=$i
-        sketchybar --add item space.$sid left \
-            --subscribe space.$sid aerospace_workspace_change \
-            --set space.$sid        \
-            icon=${sid}                \
-            label.padding_left=0       \
-            label.padding_right=6      \
-            icon.padding_left=4        \
-            icon.padding_right=1       \
-            background.padding_left=4  \
-            background.padding_right=4 \
-            background.color=0xff61afef\
-            background.corner_radius=4 \
-            background.height=22       \
-            background.drawing=on      \
-            icon.drawing=on            \
-            display=$m                 \
-            script="$CONFIG_DIR/plugins/aerospace.sh $sid" \
-            click_script="aerospace workspace $sid"
-    done
+sketchybar --add event tagwm_update
+
+for i in 1 2 3 4 5 6 7 8 9; do
+  sketchybar --add item tag.$i left \
+    --subscribe tag.$i tagwm_update \
+    --set tag.$i \
+      icon=$i \
+      label.padding_left=0 \
+      label.padding_right=6 \
+      icon.padding_left=4 \
+      icon.padding_right=1 \
+      background.padding_left=4 \
+      background.padding_right=4 \
+      background.color=0xff61afef \
+      background.corner_radius=4 \
+      background.height=22 \
+      background.drawing=on \
+      icon.drawing=on \
+      script="$TAGWM_PLUGINS/tagwm.sh $i" \
+      click_script="[ \"\$BUTTON\" = right ] && $TAGWM toggleview $i || $TAGWM view $i"
 done
 
+# dwm's layout symbol ([]= tile, TTT bstack, [D] deck, [M] monocle, |M| centeredmaster, ><> float).
+# Left click cycles to the next layout, right click goes back to tile (dwm's ClkLtSymbol buttons).
+sketchybar --add item tagwm.layout left \
+  --subscribe tagwm.layout tagwm_update \
+  --set tagwm.layout icon.drawing=off \
+    script='sketchybar --set $NAME label="${LAYOUT:-$(grep "^LAYOUT=" "$HOME/Library/Application Support/tagwm/state" 2>/dev/null | cut -d= -f2-)}"' \
+    click_script="[ \"\$BUTTON\" = right ] && $TAGWM setlayout 0 || $TAGWM cyclelayout 1"
+
 sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
-           --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-           --subscribe front_app front_app_switched
+  --set chevron icon= label.drawing=off \
+  --add item front_app left \
+  --set front_app icon.drawing=off script="$TAGWM_PLUGINS/tagwm_front_app.sh" \
+  --subscribe front_app tagwm_update
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -74,6 +77,7 @@ sketchybar --add item chevron left \
 sketchybar --add item clock_in  right --set clock_in  update_freq=10   script="$PLUGIN_DIR/clock_in.sh"
 sketchybar --add item clock     right --set clock     update_freq=10   script="$PLUGIN_DIR/clock.sh"    label.padding_left=0 label.padding_right=0
 sketchybar --add alias "Control Center,Battery" right --set "Control Center,Battery" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
+sketchybar --add item battery   right --set battery   update_freq=120  script="$PLUGIN_DIR/battery.sh" icon.drawing=off label.padding_left=0 --subscribe battery power_source_change system_woke
 sketchybar --add alias "Control Center,WiFi" right --set "Control Center,WiFi" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Stats,RAM_mini" right --set "Stats,RAM_mini" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "Stats,CPU_mini" right --set "Stats,CPU_mini" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
@@ -81,6 +85,7 @@ sketchybar --add alias "Control Center,WiFi" right --set "Control Center,WiFi" u
 # sketchybar --add alias "TextInputMenuAgent,Item-0" right --set "TextInputMenuAgent,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 # sketchybar --add alias "MeetingBar,Item-0" right --set "MeetingBar,Item-0" update_freq=3 alias.color=0xffffffff label.drawing=off icon.drawing=off background.padding_left=0 background.padding_right=0
 sketchybar --add item weather right --set weather update_freq=1800 script="$PLUGIN_DIR/weather.sh" label.padding_left=0 label.padding_right=8
+sketchybar --add item data right --set data update_freq=30 script="$PLUGIN_DIR/data.sh" label.padding_left=0 label.padding_right=8
 
 sketchybar --update
 

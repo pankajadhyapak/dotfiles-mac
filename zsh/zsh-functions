@@ -9,23 +9,7 @@ function zsh_add_plugin() {
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     else
-        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
-    fi
-}
-
-function dropLine() {
-    file=${1}
-    pattern=${2}
-    lineNumber=$(grep -n -m 1 "$pattern" ${file} | cut -d : -f 1)
-    if [[ ! -z "$lineNumber" ]]; then
-        # Create a temporary file
-        tmpfile=$(mktemp /tmp/tempfile.XXXXXX)
-
-        # Use sed to delete the line and write the result to the temporary file
-        sed "${lineNumber}d" "${file}" > "${tmpfile}"
-
-        # Move the temporary file back to the original file
-        mv "${tmpfile}" "${file}"
+        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME" && zsh_add_plugin "$1"
     fi
 }
 
@@ -38,6 +22,36 @@ function gb() {
   git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout
 }
 
+# wt - pick a git worktree of this repo with fzf and cd into it.
+# The preview shows the worktree's status and its last commits.
+function wt() {
+  git rev-parse --git-dir >/dev/null 2>&1 || { echo "wt: not in a git repo" >&2; return 1; }
+
+  local here=$(git rev-parse --show-toplevel)
+  local line dir= branch= mark rows=()
+  while IFS= read -r line; do
+    case $line in
+      worktree\ *) dir=${line#worktree } branch="(detached)" ;;
+      branch\ *) branch=${line#branch refs/heads/} ;;
+      bare) branch="(bare)" ;;
+      "")
+        if [[ -n $dir ]]; then
+          mark=""
+          [[ $dir == $here ]] && mark="(here)"
+          rows+=("$branch"$'\t'"$dir"$'\t'"$mark")
+        fi
+        dir=
+        ;;
+    esac
+  done < <(git worktree list --porcelain; echo)
+
+  local pick=$(printf '%s\n' "${rows[@]}" | fzf --header "Worktrees: Enter goes to the folder" \
+    --delimiter $'\t' --preview 'git -C {2} -c color.status=always status -sb; echo; git -C {2} log --oneline --color=always -15' \
+    --pointer="" --no-sort)
+  [[ -n $pick ]] || return 0
+  cd "${${pick#*$'\t'}%%$'\t'*}"
+}
+
 # Create a new directory and enter it
 function mkd() {
    mkdir -p "$@" && cd "$@"
@@ -45,88 +59,78 @@ function mkd() {
 
 
 function weather() {
-   city="$1"
-
-   if [ -z "$city" ]; then
-      city="berlin"
-   fi
-
-   eval "curl http://wttr.in/${city}"
+   curl "https://wttr.in/${1:-berlin}"
 }
 
 
 #  Commit everything
 function gc() {
-  commitMessage="$1"
-
-  if [ "$commitMessage" = "" ]; then
-     commitMessage="wip"
-  fi
-
-  git add .
-  eval "git commit -a -m '${commitMessage}'"
-}
-
-function toggle_layout() {
-  CURRENT_LAYOUT=$(yabai -m query --spaces --space | jq '.type')
-  if [ $CURRENT_LAYOUT = '"stack"' ]; then
-    yabai -m space --layout bsp
-  else
-    yabai -m space --layout stack
-  fi
+  git add -A && git commit -m "${1:-wip}"
 }
 
 function rwm(){
   killall AeroSpace && open -a AeroSpace
 }
 
-function ns(){
-  fileName="$HOME/Dropbox/arch_linux/org/$(date +'%d_%m_%Y_%A').org"
-  nvim $fileName
-}
-
-
-function ms(){
-  yabai -m window --toggle float --grid 4:4:1:1:2:2
-  yabai -m window --toggle sticky
-  yabai -m window --toggle topmost
-  ns
-}
-
-
 # t - smart tmux session manager
 #
-# - If you are outside a tmux session, it will try to attach to a session named
-#   after the current directory. If no such session exists, it will create it.
-# - If you are inside a tmux session, it will switch to a session named after
-#   the current directory. If no such session exists, it will be created and
-#   then switched to.
+#   t       open the session for the current directory
+#   t -     pick a directory from zoxide with fzf, then open its session
+#   tm      same as `t -`
 #
-# Session names are derived from the current directory's basename, with spaces,
-# dots, and hyphens replaced by underscores.
+# A session is named after the directory's basename, with spaces, dots, colons
+# and hyphens replaced by underscores (tmux does not accept . or : in names).
+# If the session does not exist, it is created in that directory.
+# Outside tmux it attaches; inside tmux it switches the client (attach-session
+# refuses to run inside tmux).
 function t(){
-  # Use current directory name for session name, replacing spaces, dots, and hyphens
-  local SESSION_NAME
-  SESSION_NAME=$(basename "$PWD" | tr ' .-' '_')
-
-  # Check if we are inside a tmux session
-  if [ -n "$TMUX" ]; then
-    # We are in tmux.
-    # Check if the session exists. The `2>/dev/null` suppresses the error message
-    # if the session does not exist.
-    if ! tmux has-session -t="$SESSION_NAME" 2>/dev/null; then
-      # Session does not exist, so create it detached.
-      # It will inherit the current path.
-      tmux new-session -d -s "$SESSION_NAME"
-    fi
-    # Session now exists, attach to it.
-    # `attach-session` is used because it will switch the client if run from within tmux,
-    # which is more robust than `switch-client` and avoids "no current client" errors.
-    tmux attach-session -t "$SESSION_NAME"
-  else
-    # We are not in tmux.
-    # `attach-session` will fail if the session does not exist.
-    # In that case, the `||` will execute `new-session`.
-    tmux attach-session -t "$SESSION_NAME" 2>/dev/null || tmux new-session -s "$SESSION_NAME"
+  local dir="$PWD"
+  if [[ $1 == - ]]; then
+    dir=$(zoxide query --list | fzf --prompt 'tmux> ') || return # Esc: do nothing
+    [[ -n $dir ]] || return
+  elif [[ -n $1 ]]; then
+    echo "usage: t [-]" >&2
+    return 1
   fi
+
+  local name=${${dir:t}//[ .:-]/_}
+  # "=" makes tmux match the exact name, not a session that only starts with it.
+  if ! tmux has-session -t "=$name" 2>/dev/null; then
+    tmux new-session -d -s "$name" -c "$dir" || return
+  fi
+
+  if [[ -n $TMUX ]]; then
+    tmux switch-client -t "=$name"
+  else
+    tmux attach-session -t "=$name"
+  fi
+}
+alias tm='t -'
+
+# b2m - back to main: stash local changes, switch to the default branch of
+# origin (main or master) and pull it. `git stash pop` brings the changes back.
+function b2m() {
+  git rev-parse --git-dir >/dev/null 2>&1 || { echo "b2m: not in a git repo" >&2; return 1; }
+
+  local main=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null)
+  main=${main#origin/}
+  [[ -n $main ]] || main=main
+
+  # Another worktree can hold the branch; git cannot check it out twice.
+  local holder=$(git worktree list --porcelain | awk -v b="branch refs/heads/$main" '/^worktree /{p=substr($0,10)} $0==b{print p}')
+  if [[ -n $holder && $holder != $(git rev-parse --show-toplevel) ]]; then
+    echo "b2m: $main is checked out in $holder" >&2
+    echo "     Run: cd $holder && b2m" >&2
+    return 1
+  fi
+
+  if [[ -n $(git status --porcelain) ]]; then
+    local from=$(git branch --show-current)
+    git stash push -u -m "b2m: from ${from:-detached HEAD} $(date '+%F %T')" || return 1
+    echo "b2m: stashed your changes. Run 'git stash pop' to get them back."
+  fi
+
+  git fetch origin || return 1
+  git switch "$main" || return 1
+  git pull --ff-only origin "$main"
 }

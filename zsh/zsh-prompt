@@ -1,8 +1,7 @@
-#!/bin/sh
+#!/bin/zsh
 
-## autoload vcs and colors
+## autoload vcs
 autoload -Uz vcs_info
-autoload -U colors && colors
 autoload -U add-zsh-hook
 
 # enable only git
@@ -27,24 +26,25 @@ add-zsh-hook preexec prompt_preexec
 
 # precmd() { vcs_info }
 
-precmd() {
+prompt_git_precmd() {
     vcs_info
     if [[ -n ${vcs_info_msg_0_} ]]; then
         # vcs_info found something (the documentation got that backwards
         # STATUS line taken from https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/git.zsh
-        STATUS=$(command git status --porcelain 2> /dev/null | tail -n1)
+        STATUS=$(command git status --porcelain 2> /dev/null | head -n1)
         if [[ -n $STATUS ]]; then
             # PROMPT='%F{7}%3~%f %F{red}${vcs_info_msg_0_} %f%# '
-            PROMPT='%{$fg[blue]%}%1~%{$fg[yellow]%}${vcs_info_msg_0_} %{$fg[red]%} %{$reset_color%}'
+            PROMPT='%F{blue}%1~%F{yellow}${vcs_info_msg_0_} %F{red} %f'
 
         else
-            PROMPT='%{$fg[blue]%}%1~%{$fg[yellow]%}${vcs_info_msg_0_} %{$fg[green]%} %{$reset_color%}'
+            PROMPT='%F{blue}%1~%F{yellow}${vcs_info_msg_0_} %F{green} %f'
         fi
     else
         # nothing from vcs_info
-        PROMPT='%{$fg[blue]%}%1~%{$fg[yellow]%}${vcs_info_msg_0_} %{$fg[white]%} %{$reset_color%}'
+        PROMPT='%F{blue}%1~%F{yellow}${vcs_info_msg_0_} %F{white} %f'
     fi
 }
+add-zsh-hook precmd prompt_git_precmd
 
 setopt PROMPT_SUBST
 zstyle ':vcs_info:git:*' formats '  %b'

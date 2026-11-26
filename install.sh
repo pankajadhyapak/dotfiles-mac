@@ -2,6 +2,9 @@
 
 echo "Setting up your Mac..."
 
+# Relative paths below (Brewfile, wallpaper.png, .macos) resolve from the repo root
+cd "${0:A:h}"
+
 source "zsh/.zshenv"
 
 # Create a basic directory
@@ -13,58 +16,66 @@ mkdir -p $HOME/.config
 sudo -v
 
 # Check for Homebrew and install if we don't have it
-if test ! $(which brew); then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if ! command -v brew >/dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Update Homebrew recipes
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
-brew bundle
+# Skipped here only; they stay in the Brewfile:
+# - Numbers, Pages, Spark, Xcode (HOMEBREW_BUNDLE_MAS_SKIP)
+# - cloudsql-read: a local npm link, not on the registry (bundle has no npm skip list)
+grep -v '^npm "cloudsql-read"$' Brewfile |
+  HOMEBREW_BUNDLE_MAS_SKIP="409203825 409201541 1176895641 497799835" brew bundle --file=-
 
 #gitconfig
-rm -rf "$HOME/.gitignore"
-rm -rf "$HOME/.gitconfig"
+# copied, not linked: tools (gh, git config --global) write machine-specific settings into it
 ln -sf "$DOTFILES/git/gitignore" "$HOME/.gitignore"
-cp "$DOTFILES/git/gitconfig" "$HOME/.gitconfig"
-git config --global core.excludesFile  "$HOME/.gitignore"
+[ -f "$HOME/.gitconfig" ] || cp "$DOTFILES/git/gitconfig" "$HOME/.gitconfig"
+
+#ghostty
+rm -rf "$XDG_CONFIG_HOME/ghostty"
+ln -s "$DOTFILES/ghostty" "$XDG_CONFIG_HOME"
 
 #Vscode
 rm -rf "$HOME/Library/Application Support/Code/User/settings.json"
 ln -sf "$DOTFILES/vscode.json" "$HOME/Library/Application Support/Code/User/settings.json"
 
-#wezterm
-rm -rf "$XDG_CONFIG_HOME/wezterm"
-ln -s "$DOTFILES/wezterm" "$XDG_CONFIG_HOME"
-
-#alacritty
-rm -rf "$XDG_CONFIG_HOME/alacritty"
-ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
-
 # Zsh
 mkdir -p "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"
-ln -sf "$DOTFILES/zsh/zshrc" "$XDG_CONFIG_HOME/zsh/zshrc"
+ln -sf "$DOTFILES/zsh/zshrc" "$XDG_CONFIG_HOME/zsh/.zshrc"
 ln -sf "$DOTFILES/zsh/zsh-aliases" "$XDG_CONFIG_HOME/zsh/zsh-aliases"
 ln -sf "$DOTFILES/zsh/zsh-functions" "$XDG_CONFIG_HOME/zsh/zsh-functions"
 ln -sf "$DOTFILES/zsh/zsh-prompt" "$XDG_CONFIG_HOME/zsh/zsh-prompt"
-printf '#!/bin/zsh
-
-source "$ZDOTDIR/zshrc"' > "$XDG_CONFIG_HOME/zsh/.zshrc"
+# machine-specific settings and secrets live here, never in the repo
+touch "$XDG_CONFIG_HOME/zsh/local.zsh" && chmod 600 "$XDG_CONFIG_HOME/zsh/local.zsh"
+touch "$XDG_CONFIG_HOME/zsh/secrets.zsh" && chmod 600 "$XDG_CONFIG_HOME/zsh/secrets.zsh"
 
 #Atuin
-rm -rf "$XDG_CONFIG_HOME/atuin"
-ln -s "$DOTFILES/atuin/config.toml" "$XDG_CONFIG_HOME/atuin/config.toml"
+mkdir -p "$XDG_CONFIG_HOME/atuin"
+ln -sf "$DOTFILES/atuin/config.toml" "$XDG_CONFIG_HOME/atuin/config.toml"
+
+#tagwm
+mkdir -p "$XDG_CONFIG_HOME/tagwm"
+ln -sf "$DOTFILES/tagwm/tagwm.toml" "$XDG_CONFIG_HOME/tagwm/tagwm.toml"
+
+#tinycast
+mkdir -p "$XDG_CONFIG_HOME/tinycast"
+ln -sf "$DOTFILES/tinycast/settings.json" "$XDG_CONFIG_HOME/tinycast/settings.json"
+
+#rgitlight (repositories.json and state.json stay local)
+mkdir -p "$XDG_CONFIG_HOME/rgitlight"
+ln -sf "$DOTFILES/rgitlight/settings.json" "$XDG_CONFIG_HOME/rgitlight/settings.json"
+rm -rf "$XDG_CONFIG_HOME/rgitlight/themes"
+ln -s "$DOTFILES/rgitlight/themes" "$XDG_CONFIG_HOME/rgitlight/themes"
 
 #Aersospace
 rm -rf "$XDG_CONFIG_HOME/aerospace"
 ln -s "$DOTFILES/aerospace" "$XDG_CONFIG_HOME"
-
-#karabiner
-rm -rf "$XDG_CONFIG_HOME/karabiner"
-ln -s "$DOTFILES/karabiner" "$XDG_CONFIG_HOME"
 
 #tmux
 rm -rf "$XDG_CONFIG_HOME/tmux"

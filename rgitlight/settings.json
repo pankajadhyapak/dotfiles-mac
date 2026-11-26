@@ -1,0 +1,10 @@
+{
+  "theme": "vs-code-dark-modern",
+  "editor": "com.microsoft.VSCode",
+  "terminal": "com.mitchellh.ghostty",
+  "default_diff_layout": "unified",
+  "hide_whitespace_changes": false,
+  "code_font_size": 13.0,
+  "code_line_height": 22.0,
+  "scroll_speed": 6.0
+}
