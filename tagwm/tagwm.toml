@@ -1,0 +1,171 @@
+# tagwm config: ~/.config/tagwm/tagwm.toml. `make install` writes this file there when you have none;
+# `tagwm print-default-config` prints it. Reload with `tagwm reload-config` (alt-shift-c below).
+# Settings you leave out keep their default. [keys] and [[rules]] replace the defaults as a whole.
+
+hyper-key = 'caps-lock'
+
+gaps-inner = 8              # between windows
+gaps-outer = 8              # between windows and the screen edge
+smart-gaps = true           # no outer gap when a tag shows a single window
+mfact = 0.55                # master area share, 0.05 to 0.95
+nmaster = 1                 # windows in the master area
+default-layout = 'tile'     # tile, bstack, deck, monocle, centeredmaster, float
+border-width = 2            # focused window border, points
+border-color = '#2563eb'
+border-radius = 12          # border corner radius, to match macOS window corners
+snap = 32                   # drag distance before a tiled window moves (drop on another to swap) or floats (resize)
+bar-height = 32             # SketchyBar strip; the menu bar is hidden
+mouse-modifier = 'hyper'   # Hyper (Caps Lock, hyper-key below) + drag moves, + right drag resizes
+focus-follows-mouse = false  # the window under the pointer takes focus once it stops
+
+# Values are tagwm commands, the same as `tagwm <command>` from a terminal or a SketchyBar click.
+# Modifiers: alt, shift, ctrl, cmd. Tags are 1 to 9; 0 is all tags.
+[keys]
+# Everything on Hyper (Caps Lock, hyper-key above; hyper = ctrl-alt-shift-cmd), so alt is free for apps again:
+# alt-enter for a new line, alt-u / alt-c for accents. Tags keep cmd-N to view. Hyper a c p s w b are free
+# now that Tinycast's Hyper is off.
+cmd-1 = 'view 1'
+cmd-2 = 'view 2'
+cmd-3 = 'view 3'
+cmd-4 = 'view 4'
+cmd-5 = 'view 5'
+cmd-6 = 'view 6'
+cmd-7 = 'view 7'
+cmd-8 = 'view 8'
+cmd-9 = 'view 9'
+cmd-0 = 'view 0'                          # all tags
+hyper-1 = 'tagfollow 1'
+hyper-2 = 'tagfollow 2'
+hyper-3 = 'tagfollow 3'
+hyper-4 = 'tagfollow 4'
+hyper-5 = 'tagfollow 5'
+hyper-6 = 'tagfollow 6'
+hyper-7 = 'tagfollow 7'
+hyper-8 = 'tagfollow 8'
+hyper-9 = 'tagfollow 9'
+hyper-0 = 'tag 0'                 # the window on all tags
+hyper-tab = 'view'                 # previous tags
+hyper-left = 'shiftview -1'
+hyper-right = 'shiftview +1'
+hyper-j = 'focusstack +1'
+hyper-k = 'focusstack -1'
+hyper-down = 'movestack +1'
+hyper-up = 'movestack -1'
+hyper-z = 'zoom'
+hyper-q = 'killclient'
+hyper-f = 'togglefloating'
+hyper-g = 'togglefullscreen'
+hyper-v = 'focustab +1'   # next tab in the group
+hyper-y = 'focustab -1'   # previous tab
+hyper-h = 'setmfact -0.05'
+hyper-l = 'setmfact +0.05'
+hyper-i = 'incnmaster +1'
+hyper-d = 'incnmaster -1'
+hyper-t = 'setlayout tile'
+hyper-n = 'setlayout bstack'
+hyper-u = 'setlayout deck'
+hyper-m = 'setlayout monocle'
+hyper-e = 'setlayout centeredmaster'
+hyper-space = 'setlayout'          # previous layout
+hyper-minus = 'cyclelayout -1'
+hyper-equal = 'cyclelayout +1'
+hyper-leftsquarebracket = 'focusmon -1'    # the monitor on the left
+hyper-rightsquarebracket = 'focusmon +1'   # the monitor on the right
+hyper-o = 'tagmon +1'              # send the window to the other monitor
+hyper-enter = 'spawn open -na Ghostty'
+hyper-r = 'reload-config'
+hyper-x = 'pause'
+
+# Apps by bundle ID (`tagwm list-apps` shows them); title matches a substring. Tags are 1 to 9.
+# floating = true floats the app's windows; floating = false tiles them even when they look like a dialog.
+[[rules]]
+app-id = 'com.google.Chrome'
+tags = [2]
+
+[[rules]]
+app-id = 'com.microsoft.VSCode'
+tab-group = 'coding'
+tags = [3]
+
+[[rules]]
+app-id = 'com.jetbrains.goland'
+tags = [4]
+
+[[rules]]
+app-id = 'com.jetbrains.PhpStorm-EAP'
+tags = [4]
+
+[[rules]]
+app-id = 'com.google.android.studio'
+tags = [4]
+
+[[rules]]
+app-id = 'com.tinyapp.TablePlus'
+tags = [5]
+
+[[rules]]
+app-id = 'com.anthropic.claudefordesktop'
+tags = [4]
+tab-group = 'ai'
+
+[[rules]]
+app-id = 'com.tinyspeck.slackmacgap'
+tags = [7]
+
+[[rules]]
+app-id = 'com.github.GitHubClient'
+tags = [8]
+
+[[rules]]
+app-id = 'com.apple.finder'
+floating = true
+
+[[rules]]
+app-id = 'com.apple.systempreferences'
+floating = true
+
+[[rules]]
+app-id = 'com.apple.calculator'
+floating = true
+
+[[rules]]
+app-id = 'com.apple.ActivityMonitor'
+floating = true
+
+[[rules]]
+app-id = 'com.postmanlabs.mac'   # Postman
+tags = [5]
+
+[[rules]]
+app-id = 'com.TablePro'   # TablePro
+tags = [5]
+
+[[rules]]
+app-id = 'com.t3tools.t3code'   # T3 Code (Beta)
+tags = [4]
+tab-group = 'ai'
+
+[[rules]]
+app-id = 'com.blitzreels.BlitzClean'   # BlitzClean
+tab-group = 'test'
+
+[[rules]]
+app-id = 'com.voprex.gotemail'   # GotEmail
+tags = [9]
+
+[[rules]]
+app-id = 'dev.zed.Zed'   # Zed
+tags = [3]
+
+[[rules]]
+app-id = 'dev.usemono.gpui'   # Monocode Native
+tab-group = 'ai'
+tags = [4]
+
+[[rules]]
+app-id = 'dev.pankaj.GitLight'   # GitLight
+tags = [8]
+
+[[rules]]
+app-id = 'dev.rgitlight.app'   # rgitlight
+tags = [8]

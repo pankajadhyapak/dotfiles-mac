@@ -34,7 +34,7 @@ keybind = alt+9=text:\x029
 keybind = cmd+r=text:\x0c
 keybind = cmd+shift+r=text:\x1b[A
 
-# reload tmux config
+# save in vim (ESC :w)
 keybind = cmd+s=text:\x1b:w
 
 # panes

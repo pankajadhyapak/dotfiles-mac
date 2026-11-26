@@ -37,6 +37,10 @@ Dev dependencies (PHP tools, Terraform, Go via gobrew): `./dev.sh`
 | `aerospace/` | `~/.config/aerospace` |
 | `sketchybar/` | `~/.config/sketchybar` |
 | `atuin/config.toml` | `~/.config/atuin/config.toml` |
+| `tagwm/tagwm.toml` | `~/.config/tagwm/tagwm.toml` |
+| `tinycast/settings.json` | `~/.config/tinycast/settings.json` |
+| `rgitlight/themes/` | `~/.config/rgitlight/themes` |
+| `rgitlight/settings.json` | `~/.config/rgitlight/settings.json` |
 | `colima/colima.yaml` | `~/.config/colima/default/colima.yaml` |
 | `git/gitignore` | `~/.gitignore` |
 | `git/gitconfig` | copied to `~/.gitconfig` only if it doesn't exist |
@@ -78,7 +82,7 @@ colima status
 ## Maintenance
 
 ```sh
-brew bundle dump --describe -f   # refresh the Brewfile from what's installed
+brewdump   # alias: refresh the Brewfile, without Go tools
 update                           # alias: brew update, upgrade, cleanup
 ```
 

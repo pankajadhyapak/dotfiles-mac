@@ -25,7 +25,11 @@ fi
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-brew bundle
+# Skipped here only; they stay in the Brewfile:
+# - Numbers, Pages, Spark, Xcode (HOMEBREW_BUNDLE_MAS_SKIP)
+# - cloudsql-read: a local npm link, not on the registry (bundle has no npm skip list)
+grep -v '^npm "cloudsql-read"$' Brewfile |
+  HOMEBREW_BUNDLE_MAS_SKIP="409203825 409201541 1176895641 497799835" brew bundle --file=-
 
 #gitconfig
 # copied, not linked: tools (gh, git config --global) write machine-specific settings into it
@@ -53,6 +57,20 @@ touch "$XDG_CONFIG_HOME/zsh/local.zsh" && chmod 600 "$XDG_CONFIG_HOME/zsh/local.
 #Atuin
 mkdir -p "$XDG_CONFIG_HOME/atuin"
 ln -sf "$DOTFILES/atuin/config.toml" "$XDG_CONFIG_HOME/atuin/config.toml"
+
+#tagwm
+mkdir -p "$XDG_CONFIG_HOME/tagwm"
+ln -sf "$DOTFILES/tagwm/tagwm.toml" "$XDG_CONFIG_HOME/tagwm/tagwm.toml"
+
+#tinycast
+mkdir -p "$XDG_CONFIG_HOME/tinycast"
+ln -sf "$DOTFILES/tinycast/settings.json" "$XDG_CONFIG_HOME/tinycast/settings.json"
+
+#rgitlight (repositories.json and state.json stay local)
+mkdir -p "$XDG_CONFIG_HOME/rgitlight"
+ln -sf "$DOTFILES/rgitlight/settings.json" "$XDG_CONFIG_HOME/rgitlight/settings.json"
+rm -rf "$XDG_CONFIG_HOME/rgitlight/themes"
+ln -s "$DOTFILES/rgitlight/themes" "$XDG_CONFIG_HOME/rgitlight/themes"
 
 #Aersospace
 rm -rf "$XDG_CONFIG_HOME/aerospace"

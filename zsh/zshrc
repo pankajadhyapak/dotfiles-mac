@@ -109,5 +109,8 @@ export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 
 eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
 
+# Refresh the Brewfile. Go tools come from dev.sh.
+alias brewdump='brew bundle dump -f --no-go --file="$DOTFILES/Brewfile"'
+
 # Machine-specific and secret settings, not in the repo (chmod 600)
 [ -f "$ZDOTDIR/local.zsh" ] && source "$ZDOTDIR/local.zsh"
