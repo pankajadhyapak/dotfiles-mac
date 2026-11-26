@@ -22,6 +22,8 @@ brew "bat"
 brew "bpytop"
 # Tool for emulating mouse and keyboard events
 brew "cliclick"
+# Utility for connecting securely to your Cloud SQL instances
+brew "cloud-sql-proxy"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Dependency manager for Cocoa projects
