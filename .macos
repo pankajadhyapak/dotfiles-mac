@@ -139,6 +139,24 @@ defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 ###############################################################################
+# Language, region, date and time                                             #
+###############################################################################
+
+# English first, German second
+defaults write NSGlobalDomain AppleLanguages -array "en-US" "de-DE"
+
+# English (US) language with region Germany: metric units, Monday first, EUR
+defaults write NSGlobalDomain AppleLocale -string "en_US@rg=dezzzz"
+
+# 12-hour clock
+defaults write NSGlobalDomain AppleICUForce12HourTime -bool true
+
+# Time zone Berlin; set it automatically from the location; sync with network time
+sudo systemsetup -settimezone "Europe/Berlin" > /dev/null
+sudo defaults write /Library/Preferences/com.apple.timezone.auto Active -bool true
+sudo systemsetup -setusingnetworktime on > /dev/null
+
+###############################################################################
 # Keyboard and text input (for coding)                                        #
 ###############################################################################
 
