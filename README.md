@@ -48,12 +48,11 @@ Dev dependencies (PHP tools, Terraform, Go via gobrew): `./dev.sh`
 
 ## Machine-specific settings and secrets
 
-Anything that belongs to one machine — work aliases, project variables, API keys — goes in
-`~/.config/zsh/local.zsh`. It's sourced last by `zshrc`, created with `chmod 600`, and never committed.
+Anything that belongs to one machine — work aliases, project variables — goes in
+`~/.config/zsh/local.zsh`. Secrets (API keys, tokens) go in `~/.config/zsh/secrets.zsh`.
+`zshrc` sources both last, in that order. `install.sh` creates both with `chmod 600`. Neither is committed.
 
-Export secrets here.
-
-Two files are deliberately not tracked: `local.zsh` and `sketchybar/plugins/data.sh`
+Three files are deliberately not tracked: `local.zsh`, `secrets.zsh` and `sketchybar/plugins/data.sh`
 (the `data` bar item stays blank without it).
 
 ## Keys

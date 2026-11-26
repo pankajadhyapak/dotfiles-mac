@@ -53,6 +53,7 @@ ln -sf "$DOTFILES/zsh/zsh-functions" "$XDG_CONFIG_HOME/zsh/zsh-functions"
 ln -sf "$DOTFILES/zsh/zsh-prompt" "$XDG_CONFIG_HOME/zsh/zsh-prompt"
 # machine-specific settings and secrets live here, never in the repo
 touch "$XDG_CONFIG_HOME/zsh/local.zsh" && chmod 600 "$XDG_CONFIG_HOME/zsh/local.zsh"
+touch "$XDG_CONFIG_HOME/zsh/secrets.zsh" && chmod 600 "$XDG_CONFIG_HOME/zsh/secrets.zsh"
 
 #Atuin
 mkdir -p "$XDG_CONFIG_HOME/atuin"
